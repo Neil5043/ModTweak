@@ -16,10 +16,10 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BirchFence extends Block {
+public class BirchFence extends BlockFence {
     public BirchFence(int id)
     {
-        super(id, Material.rock);
+        super(id, "ModID" + ":" + "TextureName", Material.rock);
         setHardness(1000F);
         setCreativeTab(CreativeTabs.tabBlock);
     }
