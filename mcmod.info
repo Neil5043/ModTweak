@@ -1,0 +1,17 @@
+[
+{
+  "modid": "ModTweak",
+  "name": "Mod Tweak",
+  "description": "Tweaking mods one at a time",
+  "version": "0.0.1",
+  "mcversion": "1.6.4",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["niel"],
+  "credits": "irc",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
