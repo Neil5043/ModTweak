@@ -10,6 +10,7 @@ public class ModTweakBlock  {
     public static Block birchFence, jungleFence, spruceFence, ironFence;
     public static Block birchGate, jungleGate, spruceGate, ironGate;
     public static Block birchDoor;
+    public static Block ironFence;
 
     public static void init()  {
         //Fence
