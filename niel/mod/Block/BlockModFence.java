@@ -9,10 +9,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockModFence extends BlockFence {
-	public BlockModFence(int id, String textureName) {
+	public BlockModFence(int id, String textureName, String unlocalizedName) {
 		super(id, "modtweak" + ":" + textureName, Material.wood);
 		setHardness(4.0F);
 		setCreativeTab(CreativeTabs.tabDecorations);
+		setUnlocalizedName(unlocalizedName);
 	}
 	
 	@SideOnly(Side.CLIENT)

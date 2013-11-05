@@ -7,21 +7,26 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModTweakBlock  {
 
-    public static Block birchFence;
-    public static Block jungleFence;
-    public static Block birchGate;
-    public static Block jungleGate;
+    public static Block birchFence, jungleFence, spruceFence;
+    public static Block birchGate, jungleGate, spruceGate;
 
     public static void init()  {
-        birchFence = new niel.mod.Block.BlockModFence(TweakBlock.BIRCHFENCE_ID, "birch");
-        jungleFence = new BlockModFence(TweakBlock.JUNGLEFENCE_ID, "planks_jungle");
-        birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, "birch");
-        jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, "planks_jungle");
+        birchFence = new BlockModFence(TweakBlock.BIRCHFENCE_ID, "birch", TweakBlock.BIRCHFENCE_UNLOC_NAME);
+        jungleFence = new BlockModFence(TweakBlock.JUNGLEFENCE_ID, "jungle", TweakBlock.JUNGLEFENCE_UNLOC_NAME);
+        spruceFence = new BlockModFence(TweakBlock.SPRUCEFENCE_ID, "spruce", TweakBlock.SPRUCEFENCE_UNLOC_NAME);
         
-        GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_UNLOC_NAME);
-        GameRegistry.registerBlock(jungleFence, TweakBlock.JUNGLEFENCE_UNLOC_NAME);
-        GameRegistry.registerBlock(birchGate, TweakBlock.BIRCHGATE_UNLOC_NAME);
-        GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_UNLOC_NAME);
+        birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, "birch", TweakBlock.BIRCHGATE_UNLOC_NAME);
+        jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, "jungle", TweakBlock.JUNGLEGATE_UNLOC_NAME);
+        spruceGate = new BlockModFenceGate(TweakBlock.SPRUCEGATE_ID, "spruce", TweakBlock.SPRUCEGATE_UNLOC_NAME);
+        
+        
+        GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_KEY);
+        GameRegistry.registerBlock(jungleFence, TweakBlock.JUNGLEFENCE_KEY);
+        GameRegistry.registerBlock(spruceFence, TweakBlock.SPRUCEFENCE_KEY);
+        
+        GameRegistry.registerBlock(birchGate, TweakBlock.BIRCHGATE_KEY);
+        GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_KEY);
+        GameRegistry.registerBlock(spruceGate, TweakBlock.SPRUCEGATE_KEY);
         
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.JUNGLEFENCE_ID);
