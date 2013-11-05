@@ -3,6 +3,7 @@ package niel.mod.Block;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.IconFlipped;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -25,7 +26,7 @@ import java.util.Random;
  * Time: 8:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class BlockModDoor extends Block
+public class BlockModDoor extends BlockDoor
 {
     @SideOnly(Side.CLIENT)
     private Icon[] rearIcons;
