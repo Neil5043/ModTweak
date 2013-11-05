@@ -40,7 +40,8 @@ public class BlockModFence extends BlockFence {
         {
         	for (Integer i : TweakBlock.fenceIDs)
         	{
-        		return (((Integer)l).compareTo(i) == 0);
+        		if (((Integer)l).compareTo(i) == 0)
+        			return true;
         	}
             Block block = Block.blocksList[l];
             return block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.pumpkin : false;
