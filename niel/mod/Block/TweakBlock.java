@@ -11,7 +11,7 @@ public class TweakBlock {
     public static final String BIRCHFENCE_NAME = "Birch Fence";
     public static final String BIRCHFENCE_UNLOC_NAME = "birchFence";
     public static final String BIRCHFENCE_KEY = "birchFence";
-    
+
 	public static final int JUNGLEFENCE_ID = 3003;
 	public static final String JUNGLEFENCE_NAME = "Jungle Fence";
 	public static final String JUNGLEFENCE_UNLOC_NAME = "jungleFence";
@@ -41,6 +41,11 @@ public class TweakBlock {
 	public static final String BIRCHDOOR_NAME = "Birch Wood Door";
 	public static final String BIRCHDOOR_UNLOC_NAME = "birchDoord";
 	public static final String BIRCHDOOR_KEY = "birchDoor";
+
+    public static final int IRONFENCE_ID = 3009;
+    public static final String IRONFENCE_NAME = "Iron Fence";
+    public static final String IRONFENCE_UNLOC_NAME = "ironFence";
+    public static final String IRONFENCE_KEY = "iron";
 		
 	public static ArrayList<Integer> fenceIDs = new ArrayList<Integer>();
 }
