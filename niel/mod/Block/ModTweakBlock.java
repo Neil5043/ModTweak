@@ -28,17 +28,24 @@ public class ModTweakBlock  {
         GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_KEY);
         GameRegistry.registerBlock(spruceGate, TweakBlock.SPRUCEGATE_KEY);
         
+        
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.JUNGLEFENCE_ID);
+        TweakBlock.fenceIDs.add(TweakBlock.SPRUCEFENCE_ID);
+        
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHGATE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.JUNGLEGATE_ID);
+        TweakBlock.fenceIDs.add(TweakBlock.SPRUCEGATE_ID);
     }
 
         public static void addNames() {
 
         LanguageRegistry.addName(birchFence, TweakBlock.BIRCHFENCE_NAME);
         LanguageRegistry.addName(jungleFence, TweakBlock.JUNGLEFENCE_NAME);
+        LanguageRegistry.addName(spruceFence, TweakBlock.SPRUCEFENCE_NAME);
+        
         LanguageRegistry.addName(birchGate, TweakBlock.BIRCHGATE_NAME);
         LanguageRegistry.addName(jungleGate, TweakBlock.JUNGLEGATE_NAME);
-    }
+        LanguageRegistry.addName(spruceGate, TweakBlock.SPRUCEGATE_NAME);
+        }
 }
