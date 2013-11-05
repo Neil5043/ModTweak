@@ -19,7 +19,7 @@ import java.util.List;
 public class BirchFence extends BlockFence {
     public BirchFence(int id)
     {
-        super(id, "ModID" + ":" + "birch", Material.rock);
+        super(id, "modtweak" + ":" + "birch", Material.rock);
         setHardness(1000F);
         setCreativeTab(CreativeTabs.tabBlock);
     }
