@@ -51,6 +51,11 @@ public class TweakBlock {
     public static final String IRONGATE_NAME = "Iron Fence Gate";
     public static final String IRONGATE_UNLOC_NAME = "ironGate";
     public static final String IRONGATE_KEY = "ironGate";
+
+    public static final int BLOCKLIGHT_ID = 3012;
+    public static final String BLOCKLIGHT_NAME = "Light Block";
+    public static final String BLOCKLIGHT_UNLOC_NAME = "blockLight";
+    public static final String BLOCKLIGHT_KEY = "blockLight";
 		
 	public static ArrayList<Integer> fenceIDs = new ArrayList<Integer>();
 }

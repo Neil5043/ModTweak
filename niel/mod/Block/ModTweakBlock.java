@@ -42,7 +42,7 @@ public class ModTweakBlock  {
         //Register Derp Doors
         GameRegistry.registerBlock(birchDoor, TweakBlock.BIRCHDOOR_KEY);
         //Register Light
-
+        GameRegistry.registerBlock(lightBlock, TweakBlock.BLOCKLIGHT_KEY);
         
          //Add Fence
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);
@@ -55,6 +55,8 @@ public class ModTweakBlock  {
         TweakBlock.fenceIDs.add(TweakBlock.JUNGLEGATE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.SPRUCEGATE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.IRONGATE_ID);
+        //Add Light
+        TweakBlock.fenceIDs.add(TweakBlock.BLOCKLIGHT_ID);
     }
 
         public static void addNames() {
@@ -70,5 +72,6 @@ public class ModTweakBlock  {
         LanguageRegistry.addName(ironGate, TweakBlock.IRONGATE_NAME);
         
         LanguageRegistry.addName(birchDoor, TweakBlock.BIRCHDOOR_NAME);
+        LanguageRegistry.addName(blockLight, TweakBlock.BLOCKLIGHT_NAME);
         }
 }
