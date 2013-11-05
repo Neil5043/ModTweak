@@ -9,15 +9,18 @@ public class ModTweakBlock  {
 
     public static Block birchFence, jungleFence, spruceFence;
     public static Block birchGate, jungleGate, spruceGate;
+    public static Block birchDoor;
 
     public static void init()  {
-        birchFence = new BlockModFence(TweakBlock.BIRCHFENCE_ID, "birch", TweakBlock.BIRCHFENCE_UNLOC_NAME);
+        birchFence = new BlockModFence(TweakBlock.BIRCHFENCE_ID, "planks_birch", TweakBlock.BIRCHFENCE_UNLOC_NAME);
         jungleFence = new BlockModFence(TweakBlock.JUNGLEFENCE_ID, "jungle", TweakBlock.JUNGLEFENCE_UNLOC_NAME);
         spruceFence = new BlockModFence(TweakBlock.SPRUCEFENCE_ID, "spruce", TweakBlock.SPRUCEFENCE_UNLOC_NAME);
         
         birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, "birch", TweakBlock.BIRCHGATE_UNLOC_NAME);
         jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, "jungle", TweakBlock.JUNGLEGATE_UNLOC_NAME);
         spruceGate = new BlockModFenceGate(TweakBlock.SPRUCEGATE_ID, "spruce", TweakBlock.SPRUCEGATE_UNLOC_NAME);
+        
+        birchDoor = new BlockModDoor(TweakBlock.BIRCHDOOR_ID, TweakBlock.BIRCHDOOR_UNLOC_NAME);
         
         
         GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_KEY);
@@ -27,6 +30,8 @@ public class ModTweakBlock  {
         GameRegistry.registerBlock(birchGate, TweakBlock.BIRCHGATE_KEY);
         GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_KEY);
         GameRegistry.registerBlock(spruceGate, TweakBlock.SPRUCEGATE_KEY);
+        
+        GameRegistry.registerBlock(birchDoor, TweakBlock.BIRCHDOOR_KEY);
         
         
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);
@@ -47,5 +52,7 @@ public class ModTweakBlock  {
         LanguageRegistry.addName(birchGate, TweakBlock.BIRCHGATE_NAME);
         LanguageRegistry.addName(jungleGate, TweakBlock.JUNGLEGATE_NAME);
         LanguageRegistry.addName(spruceGate, TweakBlock.SPRUCEGATE_NAME);
+        
+        LanguageRegistry.addName(birchDoor, TweakBlock.BIRCHDOOR_NAME);
         }
 }

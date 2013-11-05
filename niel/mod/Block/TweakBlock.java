@@ -36,6 +36,11 @@ public class TweakBlock {
 	public static final String SPRUCEGATE_NAME = "Spruce Fence Gate";
 	public static final String SPRUCEGATE_UNLOC_NAME = "spruceGate";
 	public static final String SPRUCEGATE_KEY = "spruceGate";	
+	
+	public static final int BIRCHDOOR_ID = 3008;
+	public static final String BIRCHDOOR_NAME = "Birch Wood Door";
+	public static final String BIRCHDOOR_UNLOC_NAME = "birchDoord";
+	public static final String BIRCHDOOR_KEY = "birchDoor";
 		
 	public static ArrayList<Integer> fenceIDs = new ArrayList<Integer>();
 }
