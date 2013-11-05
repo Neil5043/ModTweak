@@ -2,13 +2,12 @@
 {
   "modid": "ModTweak",
   "name": "Mod Tweak",
-  "description": "Tweaking mods one at a time",
-  "version": "0.0.1",
+  "description": "I dun even no \.o./
   "mcversion": "1.6.4",
   "logoFile": "",
   "url": "",
   "updateUrl": "",
-  "authors": ["niel"],
+  "authors": ["niel, tterrag"],
   "credits": "irc",
   "parent": "",
   "screenshots": [],
