@@ -8,7 +8,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class ModTweakBlock  {
 
     public static Block birchFence, jungleFence, spruceFence, ironFence;
-    public static Block birchGate, jungleGate, spruceGate;
+    public static Block birchGate, jungleGate, spruceGate, ironGate;
     public static Block birchDoor;
 
     public static void init()  {
@@ -21,9 +21,12 @@ public class ModTweakBlock  {
         birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, "birch", TweakBlock.BIRCHGATE_UNLOC_NAME);
         jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, "jungle", TweakBlock.JUNGLEGATE_UNLOC_NAME);
         spruceGate = new BlockModFenceGate(TweakBlock.SPRUCEGATE_ID, "spruce", TweakBlock.SPRUCEGATE_UNLOC_NAME);
+        ironGate = new BlockModFenceGate(TweakBlock.IRONGATE_ID, "iron", TweakBlock.IRONGATE_UNLOC_NAME);
         //Door
         birchDoor = new BlockModDoor(TweakBlock.BIRCHDOOR_ID, TweakBlock.BIRCHDOOR_UNLOC_NAME);
-        
+
+        //light
+        blockLight = BlockModLight(TweakBlock.BLOCKLIGHT_ID, TweakBlock.BLOCKLIGHT_UNLOC_NAME);
         //Register Fence
         GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_KEY);
         GameRegistry.registerBlock(jungleFence, TweakBlock.JUNGLEFENCE_KEY);
@@ -34,9 +37,12 @@ public class ModTweakBlock  {
         GameRegistry.registerBlock(birchGate, TweakBlock.BIRCHGATE_KEY);
         GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_KEY);
         GameRegistry.registerBlock(spruceGate, TweakBlock.SPRUCEGATE_KEY);
+        GameRegistry.registerBlock(ironGate, TweakBlock.IRONGATE_NAME);
 
         //Register Derp Doors
         GameRegistry.registerBlock(birchDoor, TweakBlock.BIRCHDOOR_KEY);
+        //Register Light
+
         
          //Add Fence
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);
@@ -48,6 +54,7 @@ public class ModTweakBlock  {
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHGATE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.JUNGLEGATE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.SPRUCEGATE_ID);
+        TweakBlock.fenceIDs.add(TweakBlock.IRONGATE_ID);
     }
 
         public static void addNames() {
@@ -60,6 +67,7 @@ public class ModTweakBlock  {
         LanguageRegistry.addName(birchGate, TweakBlock.BIRCHGATE_NAME);
         LanguageRegistry.addName(jungleGate, TweakBlock.JUNGLEGATE_NAME);
         LanguageRegistry.addName(spruceGate, TweakBlock.SPRUCEGATE_NAME);
+        LanguageRegistry.addName(ironGate, TweakBlock.IRONGATE_NAME);
         
         LanguageRegistry.addName(birchDoor, TweakBlock.BIRCHDOOR_NAME);
         }
