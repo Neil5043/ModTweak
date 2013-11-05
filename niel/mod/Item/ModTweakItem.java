@@ -1,7 +1,5 @@
 package niel.mod.Item;
 
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraft.item.Item;
 
 /**
  * Created with IntelliJ IDEA.

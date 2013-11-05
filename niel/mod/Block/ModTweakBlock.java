@@ -1,15 +1,15 @@
 package niel.mod.Block;
 
+import net.minecraft.block.Block;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraft.block.Block;
 
 
 public class ModTweakBlock  {
 
-    public static  Block birchFence;
-    public static  Block jungleFence;
-    public static  Block birchGate;
+    public static Block birchFence;
+    public static Block jungleFence;
+    public static Block birchGate;
     public static Block jungleGate;
 
     public static void init()  {
