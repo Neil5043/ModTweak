@@ -27,7 +27,7 @@ public class ModTweakBlock  {
         birchDoor = new BlockModDoor(TweakBlock.BIRCHDOOR_ID, TweakBlock.BIRCHDOOR_UNLOC_NAME);
 
         //light
-        blockLight = new BlockModLight(TweakBlock.BLOCKLIGHT_ID, "test", TweakBlock.BLOCKLIGHT_UNLOC_NAME);
+        blockLight = new BlockModLight(TweakBlock.BLOCKLIGHT_ID,  TweakBlock.BLOCKLIGHT_UNLOC_NAME);
         //Register Fence
         GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_KEY);
         GameRegistry.registerBlock(jungleFence, TweakBlock.JUNGLEFENCE_KEY);
