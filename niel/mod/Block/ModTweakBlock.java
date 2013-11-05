@@ -10,7 +10,7 @@ public class ModTweakBlock  {
     public static Block birchFence, jungleFence, spruceFence, ironFence;
     public static Block birchGate, jungleGate, spruceGate, ironGate;
     public static Block birchDoor;
-    public static Block ironFence;
+    public static Block blockLight;
 
     public static void init()  {
         //Fence
@@ -27,7 +27,7 @@ public class ModTweakBlock  {
         birchDoor = new BlockModDoor(TweakBlock.BIRCHDOOR_ID, TweakBlock.BIRCHDOOR_UNLOC_NAME);
 
         //light
-        blockLight = BlockModLight(TweakBlock.BLOCKLIGHT_ID, TweakBlock.BLOCKLIGHT_UNLOC_NAME);
+        blockLight = new BlockModLight(TweakBlock.BLOCKLIGHT_ID, "test", TweakBlock.BLOCKLIGHT_UNLOC_NAME);
         //Register Fence
         GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_KEY);
         GameRegistry.registerBlock(jungleFence, TweakBlock.JUNGLEFENCE_KEY);
@@ -43,7 +43,7 @@ public class ModTweakBlock  {
         //Register Derp Doors
         GameRegistry.registerBlock(birchDoor, TweakBlock.BIRCHDOOR_KEY);
         //Register Light
-        GameRegistry.registerBlock(lightBlock, TweakBlock.BLOCKLIGHT_KEY);
+        GameRegistry.registerBlock(blockLight, TweakBlock.BLOCKLIGHT_KEY);
         
          //Add Fence
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);

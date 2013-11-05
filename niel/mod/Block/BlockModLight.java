@@ -5,12 +5,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class BlockModLight extends Block
-{
-    public BlockModLight(int par1, Material par2Material)
-    {
-        super(par1, par2Material);
-        this.setCreativeTab(CreativeTabs.tabBlock);
-        this.setLightValue(10F);
+public class BlockModLight extends Block {
+    public BlockModLight(int id, String textureName, String unlocalizedName) {
+        super(id, "modtweak" + ":" + textureName, Material.wood);
+        setHardness(4.0F);
+        setCreativeTab(CreativeTabs.tabDecorations);
+        setUnlocalizedName(unlocalizedName);
     }
 }
