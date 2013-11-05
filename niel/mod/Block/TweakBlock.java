@@ -2,8 +2,6 @@ package niel.mod.Block;
 
 import java.util.ArrayList;
 
-import net.minecraft.block.Block;
-
 public class TweakBlock {
 
     // Textures Location
@@ -16,9 +14,14 @@ public class TweakBlock {
 	public static final int JUNGLEFENCE_ID = 3003;
 	public static final String JUNGLEFENCE_NAME = "Jungle Fence";
 	public static final String JUNGLEFENCE_UNLOC_NAME = "jungleFence";
+
+	public static final int BIRCHGATE_ID = 3005;
+	public static final String BIRCHGATE_NAME = "Birch Fence Gate";
+	public static final String BIRCHGATE_UNLOC_NAME = "birchGate";
 	
-	public static final String VANILLAFENCE_NAME = Block.fence.getLocalizedName();
-	public static final String VANILLAFENCE_UNLOC_NAME = Block.fence.getUnlocalizedName();
-	
+	public static final int JUNGLEGATE_ID = 3006;
+	public static final String JUNGLEGATE_NAME = "Jungle Fence Gate";
+	public static final String JUNGLEGATE_UNLOC_NAME = "jungleGate";
+		
 	public static ArrayList<Integer> fenceIDs = new ArrayList<Integer>();
 }
