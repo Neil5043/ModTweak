@@ -71,7 +71,7 @@ public class CoreTransformer implements IClassTransformer{
 						toInject.add(new VarInsnNode(Opcodes.ILOAD, 4));
 
 						toInject.add(new MethodInsnNode(Opcodes.INVOKESTATIC,
-								"CoreMethods", "canConnectFenceTo()",
+								"niel/mod/core/CoreMethods", "canConnectFenceTo",
 								this.NEW_MOD_DESC));
 
 						//toInject.add(new JumpInsnNode(Opcodes.IFNE, lmm1Node));

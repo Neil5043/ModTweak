@@ -7,12 +7,12 @@ import niel.mod.Block.TweakBlock;
 
 public class CoreMethods {
 	
-/*	public static boolean canConnectFenceTo(net.minecraft.world.IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
+	public static boolean canConnectFenceTo(net.minecraft.world.IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
     {
         int l = par1IBlockAccess.getBlockId(par2, par3, par4);
         
 
-        if (l != this.blockID && l != Block.fenceGate.blockID)
+        if (l != Block.fence.blockID && l != Block.fenceGate.blockID)
         {
             Block block = Block.blocksList[l];
             
@@ -25,6 +25,6 @@ public class CoreMethods {
         {
             return true;
         }
-    }*/
+    }
 
 }

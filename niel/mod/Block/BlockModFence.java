@@ -28,7 +28,7 @@ public class BlockModFence extends BlockFence {
 			int par3, int par4) {
 		int l = blockAccess.getBlockId(par2, par3, par4);
 
-        if (l != this.blockID && l != Block.fenceGate.blockID)
+        if (l != this.blockID && l != Block.fenceGate.blockID && l != Block.fence.blockID)
         {
         	for (Integer i : TweakBlock.fenceIDs)
         	{
