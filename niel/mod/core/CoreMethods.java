@@ -16,8 +16,11 @@ public class CoreMethods {
         {
             Block block = Block.blocksList[l];
             
-            if (l >= 3002 && l <= 3007)
-            	return true;
+            for (Integer i : TweakBlock.fenceIDs)
+            {
+            	if (i.equals(l))
+            		return true;
+            }
             
             return block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.pumpkin : false;
         }

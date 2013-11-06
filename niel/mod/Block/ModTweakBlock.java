@@ -28,6 +28,8 @@ public class ModTweakBlock  {
 
         //light
         blockLight = new BlockModLight(TweakBlock.BLOCKLIGHT_ID);
+        
+        
         //Register Fence
         GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_KEY);
         GameRegistry.registerBlock(jungleFence, TweakBlock.JUNGLEFENCE_KEY);
@@ -42,22 +44,22 @@ public class ModTweakBlock  {
 
         //Register Derp Doors
         GameRegistry.registerBlock(birchDoor, TweakBlock.BIRCHDOOR_KEY);
+        
         //Register Light
         GameRegistry.registerBlock(blockLight, TweakBlock.BLOCKLIGHT_KEY);
         
-         //Add Fence
+        
+         //Add Fences to connections
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.JUNGLEFENCE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.SPRUCEFENCE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.IRONFENCE_ID);
 
-        //Add Fence Gate
+        //Add Fence Gates to connections
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHGATE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.JUNGLEGATE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.SPRUCEGATE_ID);
         TweakBlock.fenceIDs.add(TweakBlock.IRONGATE_ID);
-        //Add Light
-        TweakBlock.fenceIDs.add(TweakBlock.BLOCKLIGHT_ID);
     }
 
         public static void addNames() {
