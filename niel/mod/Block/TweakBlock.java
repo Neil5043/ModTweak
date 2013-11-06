@@ -47,12 +47,12 @@ public class TweakBlock {
     public static final String IRONFENCE_UNLOC_NAME = "ironFence";
     public static final String IRONFENCE_KEY = "ironFence";
 
-    public static final int IRONGATE_ID = 3011;
+    public static final int IRONGATE_ID = 3000;
     public static final String IRONGATE_NAME = "Iron Fence Gate";
     public static final String IRONGATE_UNLOC_NAME = "ironGate";
     public static final String IRONGATE_KEY = "ironGate";
 
-    public static final int BLOCKLIGHT_ID = 3012;
+    public static final int BLOCKLIGHT_ID = 3001;
     public static final String BLOCKLIGHT_NAME = "Light Block";
     public static final String BLOCKLIGHT_UNLOC_NAME = "blockLight";
     public static final String BLOCKLIGHT_KEY = "blockLight";
