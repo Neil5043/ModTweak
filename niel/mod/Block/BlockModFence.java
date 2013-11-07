@@ -5,8 +5,10 @@ import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.IBlockAccess;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import crazypants.enderio.EnderIO;
 
 public class BlockModFence extends BlockFence {
 	public BlockModFence(int id, String textureName, String unlocalizedName) {
@@ -35,6 +37,13 @@ public class BlockModFence extends BlockFence {
         		if (((Integer)l).compareTo(i) == 0)
         			return true;
         	}
+        	
+        	if (Loader.isModLoaded("EnderIO"))
+            {
+            	if (l == EnderIO.blockCustomFence.blockID || l == EnderIO.blockCustomFenceGate.blockID)
+            		return true;
+            }
+        	
             Block block = Block.blocksList[l];
             return block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.pumpkin : false;
         }
