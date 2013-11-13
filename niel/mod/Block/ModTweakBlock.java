@@ -19,10 +19,11 @@ public class ModTweakBlock  {
         spruceFence = new BlockModFence(TweakBlock.SPRUCEFENCE_ID, "spruce", TweakBlock.SPRUCEFENCE_UNLOC_NAME);
         ironFence = new BlockModFence(TweakBlock.IRONFENCE_ID, "iron", TweakBlock.IRONFENCE_UNLOC_NAME);
         //Fence Gate
-        birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, "birch", TweakBlock.BIRCHGATE_UNLOC_NAME);
-        jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, "jungle", TweakBlock.JUNGLEGATE_UNLOC_NAME);
-        spruceGate = new BlockModFenceGate(TweakBlock.SPRUCEGATE_ID, "spruce", TweakBlock.SPRUCEGATE_UNLOC_NAME);
-        ironGate = new BlockModFenceGate(TweakBlock.IRONGATE_ID, "iron", TweakBlock.IRONGATE_UNLOC_NAME);
+        birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[0], TweakBlock.BIRCHGATE_UNLOC_NAME);
+        jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[1], TweakBlock.JUNGLEGATE_UNLOC_NAME);
+        spruceGate = new BlockModFenceGate(TweakBlock.SPRUCEGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[2], TweakBlock.SPRUCEGATE_UNLOC_NAME);
+        ironGate = new BlockModFenceGate(TweakBlock.IRONGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[3], TweakBlock.IRONGATE_UNLOC_NAME);
+        
         //Door
         birchDoor = new BlockModDoor(TweakBlock.BIRCHDOOR_ID, TweakBlock.BIRCHDOOR_UNLOC_NAME);
 
@@ -37,13 +38,14 @@ public class ModTweakBlock  {
         GameRegistry.registerBlock(ironFence, TweakBlock.IRONFENCE_KEY);
 
         //Register Fence Gate
-        GameRegistry.registerBlock(birchGate, TweakBlock.BIRCHGATE_KEY);
-        GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_KEY);
-        GameRegistry.registerBlock(spruceGate, TweakBlock.SPRUCEGATE_KEY);
-        GameRegistry.registerBlock(ironGate, TweakBlock.IRONGATE_NAME);
+        GameRegistry.registerBlock(birchGate, TweakBlock.BIRCHGATE_UNLOC_NAME);
+        GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_UNLOC_NAME);
+        GameRegistry.registerBlock(spruceGate, TweakBlock.SPRUCEGATE_UNLOC_NAME);
+        GameRegistry.registerBlock(ironGate, TweakBlock.IRONGATE_UNLOC_NAME);
+
 
         //Register Derp Doors
-        GameRegistry.registerBlock(birchDoor, TweakBlock.BIRCHDOOR_KEY);
+        //GameRegistry.registerBlock(birchDoor, TweakBlock.BIRCHDOOR_KEY);
         
         //Register Light
         GameRegistry.registerBlock(blockLight, TweakBlock.BLOCKLIGHT_KEY);
@@ -76,5 +78,10 @@ public class ModTweakBlock  {
         
         LanguageRegistry.addName(birchDoor, TweakBlock.BIRCHDOOR_NAME);
         LanguageRegistry.addName(blockLight, TweakBlock.BLOCKLIGHT_NAME);
+        }
+        
+        public static void registerRecipes()
+        {
+        	BlockRecipes.addRecipes();
         }
 }

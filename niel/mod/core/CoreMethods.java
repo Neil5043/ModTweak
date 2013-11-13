@@ -1,12 +1,10 @@
 package niel.mod.core;
 
-import cpw.mods.fml.common.Loader;
-import crazypants.enderio.EnderIO;
-import crazypants.enderio.machine.painter.BlockCustomFence;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.world.IBlockAccess;
 import niel.mod.Block.TweakBlock;
+import cpw.mods.fml.common.Loader;
+import crazypants.enderio.EnderIO;
 
 public class CoreMethods {
 	

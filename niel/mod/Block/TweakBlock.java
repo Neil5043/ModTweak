@@ -56,6 +56,9 @@ public class TweakBlock {
     public static final String BLOCKLIGHT_NAME = "Light Block";
     public static final String BLOCKLIGHT_UNLOC_NAME = "blockLight";
     public static final String BLOCKLIGHT_KEY = "blockLight";
+    
+    public static final String[] GATE_TEXTURE_NAMES = new String[]{"birch", "jungle", "spruce", "iron"};
+    public static final String[] GATE_UNLOC_NAMES = new String[]{"gateBirch", "gateJungle", "gateSpruce", "gateIron"};
 		
 	public static ArrayList<Integer> fenceIDs = new ArrayList<Integer>();
 }

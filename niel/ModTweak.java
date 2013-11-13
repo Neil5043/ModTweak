@@ -38,6 +38,7 @@ public class ModTweak {
         ModTweakItem.addNames();
         ModTweakItem.registerRecipes();
         ModTweakBlock.addNames();
+        ModTweakBlock.registerRecipes();
     }
 
     @EventHandler
