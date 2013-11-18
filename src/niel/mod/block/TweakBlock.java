@@ -1,4 +1,4 @@
-package niel.mod.Block;
+package niel.mod.block;
 
 import java.util.ArrayList;
 
@@ -56,6 +56,11 @@ public class TweakBlock {
     public static final String BLOCKLIGHT_NAME = "Light Block";
     public static final String BLOCKLIGHT_UNLOC_NAME = "blockLight";
     public static final String BLOCKLIGHT_KEY = "blockLight";
+    
+    public static final int STAIR_ID = 3010;
+    public static final String STAIR_NAME = "Smooth Stone Stairs";
+    public static final String STAIR_UNLOC_NAME = "smoothStoneStair";
+    public static final String STAIR_KEY = "smoothStoneStair";
     
     public static final String[] GATE_TEXTURE_NAMES = new String[]{"birch", "jungle", "spruce", "iron"};
     public static final String[] GATE_UNLOC_NAMES = new String[]{"gateBirch", "gateJungle", "gateSpruce", "gateIron"};

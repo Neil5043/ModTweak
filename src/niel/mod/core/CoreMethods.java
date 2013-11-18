@@ -2,7 +2,7 @@ package niel.mod.core;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import niel.mod.Block.TweakBlock;
+import niel.mod.block.TweakBlock;
 import cpw.mods.fml.common.Loader;
 import crazypants.enderio.EnderIO;
 

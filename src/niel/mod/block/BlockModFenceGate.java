@@ -1,4 +1,4 @@
-package niel.mod.Block;
+package niel.mod.block;
 
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.client.renderer.texture.IconRegister;

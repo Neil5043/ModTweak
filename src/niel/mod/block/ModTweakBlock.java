@@ -1,4 +1,4 @@
-package niel.mod.Block;
+package niel.mod.block;
 
 import net.minecraft.block.Block;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -11,6 +11,7 @@ public class ModTweakBlock  {
     public static Block birchGate, jungleGate, spruceGate, ironGate;
     public static Block birchDoor;
     public static Block blockLight;
+    public static Block blockStair;
 
     public static void init()  {
         //Fence
@@ -30,6 +31,7 @@ public class ModTweakBlock  {
         //light
         blockLight = new BlockModLight(TweakBlock.BLOCKLIGHT_ID);
         
+        blockStair = new BlockModStairs(TweakBlock.STAIR_ID, Block.stone, 0);
         
         //Register Fence
         GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_KEY);
@@ -50,6 +52,7 @@ public class ModTweakBlock  {
         //Register Light
         GameRegistry.registerBlock(blockLight, TweakBlock.BLOCKLIGHT_KEY);
         
+        GameRegistry.registerBlock(blockStair, TweakBlock.STAIR_KEY);
         
          //Add Fences to connections
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);
@@ -78,6 +81,8 @@ public class ModTweakBlock  {
         
         LanguageRegistry.addName(birchDoor, TweakBlock.BIRCHDOOR_NAME);
         LanguageRegistry.addName(blockLight, TweakBlock.BLOCKLIGHT_NAME);
+        
+        LanguageRegistry.addName(blockStair, TweakBlock.STAIR_NAME);
         }
         
         public static void registerRecipes()

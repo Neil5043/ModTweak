@@ -1,4 +1,4 @@
-package niel.mod.Item;
+package niel.mod.item;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;

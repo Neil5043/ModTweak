@@ -2,8 +2,8 @@ package niel;
 
 
 import niel.lib.ModLib;
-import niel.mod.Block.ModTweakBlock;
-import niel.mod.Item.ModTweakItem;
+import niel.mod.block.ModTweakBlock;
+import niel.mod.item.ModTweakItem;
 import niel.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;

@@ -1,4 +1,4 @@
-package niel.mod.Block;
+package niel.mod.block;
 
 
 import java.util.Random;
