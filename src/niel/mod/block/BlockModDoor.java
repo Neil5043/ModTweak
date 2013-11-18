@@ -27,13 +27,12 @@ public class BlockModDoor extends BlockDoor
     @SideOnly(Side.CLIENT)
     private Icon[] frontIcons;
 
-    protected BlockModDoor(int par1, String unlocalizedName)
+    protected BlockModDoor(int par1)
     {
         super(par1, Material.wood);
         float f = 0.5F;
         float f1 = 1.0F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f1, 0.5F + f);
-        setUnlocalizedName(unlocalizedName);
         setCreativeTab(CreativeTabs.tabBlock);
     }
 

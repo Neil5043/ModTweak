@@ -37,10 +37,10 @@ public class TweakBlock {
 	public static final String SPRUCEGATE_UNLOC_NAME = "spruceGate";
 	public static final String SPRUCEGATE_KEY = "spruceGate";	
 	
-	public static final int BIRCHDOOR_ID = 3008;
-	public static final String BIRCHDOOR_NAME = "Birch Wood Door";
-	public static final String BIRCHDOOR_UNLOC_NAME = "birchDoord";
-	public static final String BIRCHDOOR_KEY = "birchDoor";
+	public static final int DOOR_ID = 3008;
+	public static final String[] DOOR_NAMES = new String[]{"Birch Wood Door", "Jungle Wood Door", "SpruceWoodDoor"};
+	public static final String[] DOOR_UNLOC_NAMES = new String[]{"birchDoor", "jungleDoor", "spruceDoor"};
+	public static final String DOOR_KEY = "modDoor";
 
     public static final int IRONFENCE_ID = 3009;
     public static final String IRONFENCE_NAME = "Iron Fence";
@@ -52,7 +52,7 @@ public class TweakBlock {
     public static final String IRONGATE_UNLOC_NAME = "ironGate";
     public static final String IRONGATE_KEY = "ironGate";
 
-    public static final int BLOCKLIGHT_ID = 3001;
+    public static final int BLOCKLIGHT_ID = 2999;
     public static final String BLOCKLIGHT_NAME = "Light Block";
     public static final String BLOCKLIGHT_UNLOC_NAME = "blockLight";
     public static final String BLOCKLIGHT_KEY = "blockLight";

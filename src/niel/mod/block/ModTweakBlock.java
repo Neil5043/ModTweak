@@ -1,6 +1,7 @@
 package niel.mod.block;
 
 import net.minecraft.block.Block;
+import niel.mod.item.ItemBlockModDoor;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -9,7 +10,7 @@ public class ModTweakBlock  {
 
     public static Block birchFence, jungleFence, spruceFence, ironFence;
     public static Block birchGate, jungleGate, spruceGate, ironGate;
-    public static Block birchDoor;
+    public static Block modDoor, birchDoor, jungleDoor, spruceDoor;
     public static Block blockLight;
     public static Block blockStair;
 
@@ -26,7 +27,11 @@ public class ModTweakBlock  {
         ironGate = new BlockModFenceGate(TweakBlock.IRONGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[3], TweakBlock.IRONGATE_UNLOC_NAME);
         
         //Door
-        birchDoor = new BlockModDoor(TweakBlock.BIRCHDOOR_ID, TweakBlock.BIRCHDOOR_UNLOC_NAME);
+        modDoor = new BlockModDoor(TweakBlock.DOOR_ID);
+        //birchDoor = new BlockModDoor(TweakBlock.DOOR_ID);
+        //jungleDoor = new BlockModDoor(TweakBlock.DOOR_ID);
+        //spruceDoor = new BlockModDoor(TweakBlock.DOOR_ID);
+        
 
         //light
         blockLight = new BlockModLight(TweakBlock.BLOCKLIGHT_ID);
@@ -44,6 +49,8 @@ public class ModTweakBlock  {
         GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_UNLOC_NAME);
         GameRegistry.registerBlock(spruceGate, TweakBlock.SPRUCEGATE_UNLOC_NAME);
         GameRegistry.registerBlock(ironGate, TweakBlock.IRONGATE_UNLOC_NAME);
+        
+        GameRegistry.registerBlock(modDoor, ItemBlockModDoor.class, TweakBlock.DOOR_KEY);
 
 
         //Register Derp Doors
@@ -79,7 +86,7 @@ public class ModTweakBlock  {
         LanguageRegistry.addName(spruceGate, TweakBlock.SPRUCEGATE_NAME);
         LanguageRegistry.addName(ironGate, TweakBlock.IRONGATE_NAME);
         
-        LanguageRegistry.addName(birchDoor, TweakBlock.BIRCHDOOR_NAME);
+        LanguageRegistry.addName(modDoor, TweakBlock.DOOR_NAMES[0]);
         LanguageRegistry.addName(blockLight, TweakBlock.BLOCKLIGHT_NAME);
         
         LanguageRegistry.addName(blockStair, TweakBlock.STAIR_NAME);
