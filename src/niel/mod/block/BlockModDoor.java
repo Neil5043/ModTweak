@@ -9,7 +9,9 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import niel.ModTweak;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -33,7 +35,7 @@ public class BlockModDoor extends BlockDoor
         float f = 0.5F;
         float f1 = 1.0F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f1, 0.5F + f);
-        setCreativeTab(CreativeTabs.tabBlock);
+        setCreativeTab(ModTweak.tabStoneLamp);
     }
 
     @SideOnly(Side.CLIENT)
@@ -43,6 +45,12 @@ public class BlockModDoor extends BlockDoor
     public Icon getIcon(int par1, int par2)
     {
         return this.frontIcons[0];
+    }
+    
+    @Override
+    public Icon getBlockTexture(IBlockAccess par1iBlockAccess, int par2, int par3, int par4, int par5)
+    {
+    	return frontIcons[0];
     }
 
     @SideOnly(Side.CLIENT)

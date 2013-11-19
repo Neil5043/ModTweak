@@ -3,6 +3,7 @@ package niel.mod.block;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import niel.ModTweak;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -17,6 +18,7 @@ public class BlockModFenceGate extends BlockFenceGate
 		setHardness(4.0F);
 		this.textureName = textureName;
 		setUnlocalizedName(unlocName);
+		setCreativeTab(ModTweak.tabStoneLamp);
 	}
 
 	@SideOnly(Side.CLIENT)

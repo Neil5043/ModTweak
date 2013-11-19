@@ -1,21 +1,26 @@
 package niel.mod.block;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
+import niel.ModTweak;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import crazypants.enderio.EnderIO;
 
 public class BlockModFence extends BlockFence {
-	public BlockModFence(int id, String textureName, String unlocalizedName) {
-		super(id, "modtweak" + ":" + textureName, Material.wood);
+	public BlockModFence(int id) {
+		super(id, "dummy string", Material.wood);
 		setHardness(4.0F);
-		setCreativeTab(CreativeTabs.tabDecorations);
-		setUnlocalizedName(unlocalizedName);
+		setCreativeTab(ModTweak.tabStoneLamp);
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -51,5 +56,32 @@ public class BlockModFence extends BlockFence {
         {
             return true;
         }
+	}
+	
+	public static Icon[] icons = new Icon[4];
+	
+	@Override
+	public void registerIcons(IconRegister register)
+	{
+		icons[0] = register.registerIcon("modtweak:birch");
+		icons[1] = register.registerIcon("modtweak:jungle");
+		icons[2] = register.registerIcon("modtweak:spruce");
+		icons[3] = register.registerIcon("modtweak:iron");
+	}
+	
+	@Override
+	public Icon getIcon(int par1, int par2)
+	{
+		if (par2 < 4)
+			return icons[par2];
+		else return icons[0];
+	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List list)
+	{
+		for (int i = 0; i < 4; i++)
+			list.add(new ItemStack(this.blockID, 1, i));
 	}
 }

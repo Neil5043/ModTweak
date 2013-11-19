@@ -16,7 +16,7 @@ public class BlockRecipes
 			planks[i - 1] = new ItemStack(Block.planks, 1, i);
 		}
 		
-		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.birchFence, 3), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.fence, 3, 0), new Object[]{
 			"BSB",
 			"BSB",
 			
@@ -24,7 +24,7 @@ public class BlockRecipes
 			'S', Item.stick
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.jungleFence, 3), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.fence, 3, 1), new Object[]{
 			"JSJ",
 			"JSJ",
 			
@@ -32,7 +32,7 @@ public class BlockRecipes
 			'S', Item.stick
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.spruceFence, 3), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.fence, 3, 2), new Object[]{
 			"sSs",
 			"sSs",
 			
@@ -40,7 +40,7 @@ public class BlockRecipes
 			'S', Item.stick
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.ironFence, 3), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.fence, 3, 3), new Object[]{
 			"ISI",
 			"ISI",
 			

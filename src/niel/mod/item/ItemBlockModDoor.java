@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import niel.ModTweak;
 import niel.mod.block.ModTweakBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -25,7 +26,7 @@ public class ItemBlockModDoor extends ItemBlock {
 	{
 		super(id);
 		maxStackSize = 16;
-		setCreativeTab(CreativeTabs.tabRedstone);
+		setCreativeTab(ModTweak.tabStoneLamp);
 		setHasSubtypes(true);
 	}
 	
@@ -63,22 +64,8 @@ public class ItemBlockModDoor extends ItemBlock {
         }
         y++;
 
-        Block block;
-        switch (itemstack.getItemDamage())
-        {
-        case 0:
-            block = ModTweakBlock.birchDoor;
-            break;
-        case 1:
-            block = ModTweakBlock.jungleDoor;
-            break;
-        case 2:
-            block = ModTweakBlock.spruceDoor;
-            break;
-        default:
-            block = Block.doorWood;
-            break;
-        }
+        Block block = ModTweakBlock.modDoor;
+        
         if (!player.canPlayerEdit(x, y, z, side, itemstack) || !player.canPlayerEdit(x, y + 1, z, side, itemstack))
         {
             return false;
@@ -140,5 +127,17 @@ public class ItemBlockModDoor extends ItemBlock {
         world.setBlock(x, y + 1, z, block.blockID, 8 | (var12 ? 1 : 0), 2);
         world.notifyBlocksOfNeighborChange(x, y, z, block.blockID);
         world.notifyBlocksOfNeighborChange(x, y + 1, z, block.blockID);
+    }
+    
+    @Override
+    public String getUnlocalizedName(ItemStack par1ItemStack)
+    {
+    	switch(par1ItemStack.getItemDamage())
+    	{
+    	case 0: return "tterrag.tile.birchDoor";
+    	case 1: return "tterrag.tile.jungleDoor";
+    	case 2: return "tterrag.tile.spruceDoor";
+    	default: return "tterrag.tile.invalidDoor";
+    	}
     }
 }

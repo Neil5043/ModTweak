@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import niel.ModTweak;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -18,7 +19,7 @@ public class BlockModLight  extends BlockRedstoneLight {
     public BlockModLight(int id) {
         super(id, false);
         setHardness(1.0F);
-        setCreativeTab(CreativeTabs.tabDecorations);
+        setCreativeTab(ModTweak.tabStoneLamp);
         setUnlocalizedName(TweakBlock.BLOCKLIGHT_UNLOC_NAME);
         meta = 1;
     }

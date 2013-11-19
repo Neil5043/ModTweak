@@ -8,7 +8,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModTweakBlock  {
 
-    public static Block birchFence, jungleFence, spruceFence, ironFence;
+    public static Block fence;
     public static Block birchGate, jungleGate, spruceGate, ironGate;
     public static Block modDoor, birchDoor, jungleDoor, spruceDoor;
     public static Block blockLight;
@@ -16,10 +16,8 @@ public class ModTweakBlock  {
 
     public static void init()  {
         //Fence
-        birchFence = new BlockModFence(TweakBlock.BIRCHFENCE_ID, "birch", TweakBlock.BIRCHFENCE_UNLOC_NAME);
-        jungleFence = new BlockModFence(TweakBlock.JUNGLEFENCE_ID, "jungle", TweakBlock.JUNGLEFENCE_UNLOC_NAME);
-        spruceFence = new BlockModFence(TweakBlock.SPRUCEFENCE_ID, "spruce", TweakBlock.SPRUCEFENCE_UNLOC_NAME);
-        ironFence = new BlockModFence(TweakBlock.IRONFENCE_ID, "iron", TweakBlock.IRONFENCE_UNLOC_NAME);
+        fence = new BlockModFence(TweakBlock.FENCE_ID);
+        
         //Fence Gate
         birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[0], TweakBlock.BIRCHGATE_UNLOC_NAME);
         jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[1], TweakBlock.JUNGLEGATE_UNLOC_NAME);
@@ -27,7 +25,6 @@ public class ModTweakBlock  {
         ironGate = new BlockModFenceGate(TweakBlock.IRONGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[3], TweakBlock.IRONGATE_UNLOC_NAME);
         
         //Door
-        modDoor = new BlockModDoor(TweakBlock.DOOR_ID);
         //birchDoor = new BlockModDoor(TweakBlock.DOOR_ID);
         //jungleDoor = new BlockModDoor(TweakBlock.DOOR_ID);
         //spruceDoor = new BlockModDoor(TweakBlock.DOOR_ID);
@@ -37,12 +34,10 @@ public class ModTweakBlock  {
         blockLight = new BlockModLight(TweakBlock.BLOCKLIGHT_ID);
         
         blockStair = new BlockModStairs(TweakBlock.STAIR_ID, Block.stone, 0);
-        
+        modDoor = new BlockModDoor(TweakBlock.DOOR_ID);
+
         //Register Fence
-        GameRegistry.registerBlock(birchFence, TweakBlock.BIRCHFENCE_KEY);
-        GameRegistry.registerBlock(jungleFence, TweakBlock.JUNGLEFENCE_KEY);
-        GameRegistry.registerBlock(spruceFence, TweakBlock.SPRUCEFENCE_KEY);
-        GameRegistry.registerBlock(ironFence, TweakBlock.IRONFENCE_KEY);
+        GameRegistry.registerBlock(fence, TweakBlock.FENCE_KEY);
 
         //Register Fence Gate
         GameRegistry.registerBlock(birchGate, TweakBlock.BIRCHGATE_UNLOC_NAME);
@@ -62,10 +57,7 @@ public class ModTweakBlock  {
         GameRegistry.registerBlock(blockStair, TweakBlock.STAIR_KEY);
         
          //Add Fences to connections
-        TweakBlock.fenceIDs.add(TweakBlock.BIRCHFENCE_ID);
-        TweakBlock.fenceIDs.add(TweakBlock.JUNGLEFENCE_ID);
-        TweakBlock.fenceIDs.add(TweakBlock.SPRUCEFENCE_ID);
-        TweakBlock.fenceIDs.add(TweakBlock.IRONFENCE_ID);
+        TweakBlock.fenceIDs.add(TweakBlock.FENCE_ID);
 
         //Add Fence Gates to connections
         TweakBlock.fenceIDs.add(TweakBlock.BIRCHGATE_ID);
@@ -76,20 +68,25 @@ public class ModTweakBlock  {
 
         public static void addNames() {
 
-        LanguageRegistry.addName(birchFence, TweakBlock.BIRCHFENCE_NAME);
-        LanguageRegistry.addName(jungleFence, TweakBlock.JUNGLEFENCE_NAME);
-        LanguageRegistry.addName(spruceFence, TweakBlock.SPRUCEFENCE_NAME);
-        LanguageRegistry.addName(ironFence, TweakBlock.IRONFENCE_NAME);
+        	LanguageRegistry.instance().addStringLocalization("tterrag.tile.birchFence.name", "Birch Fence");   
+            LanguageRegistry.instance().addStringLocalization("tterrag.tile.jungleFence.name", "Jungle Fence");   
+            LanguageRegistry.instance().addStringLocalization("tterrag.tile.spruceFence.name", "Spruce Fence");
+            LanguageRegistry.instance().addStringLocalization("tterrag.tile.ironFence.name", "Iron Fence");
         
-        LanguageRegistry.addName(birchGate, TweakBlock.BIRCHGATE_NAME);
-        LanguageRegistry.addName(jungleGate, TweakBlock.JUNGLEGATE_NAME);
-        LanguageRegistry.addName(spruceGate, TweakBlock.SPRUCEGATE_NAME);
-        LanguageRegistry.addName(ironGate, TweakBlock.IRONGATE_NAME);
+            LanguageRegistry.addName(birchGate, TweakBlock.BIRCHGATE_NAME);
+            LanguageRegistry.addName(jungleGate, TweakBlock.JUNGLEGATE_NAME);
+            LanguageRegistry.addName(spruceGate, TweakBlock.SPRUCEGATE_NAME);
+            LanguageRegistry.addName(ironGate, TweakBlock.IRONGATE_NAME);
         
-        LanguageRegistry.addName(modDoor, TweakBlock.DOOR_NAMES[0]);
-        LanguageRegistry.addName(blockLight, TweakBlock.BLOCKLIGHT_NAME);
+            LanguageRegistry.addName(blockLight, TweakBlock.BLOCKLIGHT_NAME);
         
-        LanguageRegistry.addName(blockStair, TweakBlock.STAIR_NAME);
+            LanguageRegistry.addName(blockStair, TweakBlock.STAIR_NAME);
+        
+            LanguageRegistry.instance().addStringLocalization("tterrag.tile.birchDoor.name", "Birch Door");   
+            LanguageRegistry.instance().addStringLocalization("tterrag.tile.jungleDoor.name", "Jungle Door");   
+        	LanguageRegistry.instance().addStringLocalization("tterrag.tile.spruceDoor.name", "Spruce Door");   
+
+        
         }
         
         public static void registerRecipes()
