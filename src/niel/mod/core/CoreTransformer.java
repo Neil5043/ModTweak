@@ -86,8 +86,6 @@ public class CoreTransformer implements IClassTransformer
 
 						toInject.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "niel/mod/core/CoreMethods", "canConnectFenceTo", this.NEW_FENCE_METHOD_DESC));
 
-						// toInject.add(new JumpInsnNode(Opcodes.IFNE,
-						// lmm1Node));
 						toInject.add(jumpLabel);
 						toInject.add(lmm1Node);
 
@@ -139,14 +137,13 @@ public class CoreTransformer implements IClassTransformer
 
 						toInject.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "niel/mod/core/CoreMethods", "canConnectWallTo", this.NEW_WALL_METHOD_DESC));
 
-						// toInject.add(new JumpInsnNode(Opcodes.IFNE,
-						// lmm1Node));
 						toInject.add(jumpLabel);
 						toInject.add(lmm1Node);
 
 						m.instructions.insert(m.instructions.get(index), toInject);
 						System.out.println("TRANSFORMATION COMPLETE!");
 						break;
+						
 					}
 				}
 			}
