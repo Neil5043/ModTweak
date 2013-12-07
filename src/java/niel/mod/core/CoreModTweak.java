@@ -6,7 +6,6 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 public class CoreModTweak implements IFMLLoadingPlugin {
 
-	@Override
 	public String[] getLibraryRequestClass() {
 		// TODO Auto-generated method stub
 		return null;
