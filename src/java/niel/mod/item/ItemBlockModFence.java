@@ -14,7 +14,7 @@ import niel.mod.block.BlockModFence;
 
 public class ItemBlockModFence extends ItemBlock
 {
-	public static final String[] woodType = new String[] {"oak", "spruce", "birch", "jungle"};
+	public static final String[] woodType = new String[] {"spruce", "birch", "jungle", "iron"};
 	public ItemBlockModFence(int par1)
 	{
 		super(par1);
@@ -46,8 +46,7 @@ public class ItemBlockModFence extends ItemBlock
 	@SideOnly(Side.CLIENT)
 	public Icon getIconFromDamage(int meta) {
 		if (meta < 3)
-			return Block.planks.getIcon(0, meta + 1);
-		
+			return Block.planks.getIcon(meta + 1, meta + 1);		
 		return Block.blockIron.getIcon(0, 0);
 	}
 
