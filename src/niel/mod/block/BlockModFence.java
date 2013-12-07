@@ -58,23 +58,13 @@ public class BlockModFence extends BlockFence {
         }
 	}
 	
-	public static Icon[] icons = new Icon[4];
-	
-	@Override
-	public void registerIcons(IconRegister register)
-	{
-		icons[0] = register.registerIcon("modtweak:birch");
-		icons[1] = register.registerIcon("modtweak:jungle");
-		icons[2] = register.registerIcon("modtweak:spruce");
-		icons[3] = register.registerIcon("modtweak:iron");
-	}
-	
 	@Override
 	public Icon getIcon(int par1, int par2)
 	{
-		if (par2 < 4)
-			return icons[par2];
-		else return icons[0];
+		if (par2 < 3)
+			return Block.planks.getIcon(0, par2 + 1);
+		
+		return Block.blockIron.getIcon(0, 0);
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
