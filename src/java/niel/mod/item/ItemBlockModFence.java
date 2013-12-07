@@ -14,35 +14,34 @@ import niel.mod.block.BlockModFence;
 
 public class ItemBlockModFence extends ItemBlock
 {
-
+	public static final String[] woodType = new String[] {"oak", "spruce", "birch", "jungle"};
 	public ItemBlockModFence(int par1)
 	{
 		super(par1);
 		setCreativeTab(ModTweak.tabStoneLamp);
 		setHasSubtypes(true);
+		setUnlocalizedName("fence");
+		setMaxDamage(0);
 	}
-	
+
+	@Override
+	public int getMetadata (int damageValue) {
+		return damageValue;
+	}
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List list)
 	{
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < woodType.length; i++)
 			list.add(new ItemStack(this.itemID, 1, i));
 	}
-	
+
 	@Override
-    public String getUnlocalizedName(ItemStack par1ItemStack)
-    {
-    	switch(par1ItemStack.getItemDamage())
-    	{
-    	case 0: return "tterrag.tile.birchFence";
-    	case 1: return "tterrag.tile.jungleFence";
-    	case 2: return "tterrag.tile.spruceFence";
-    	case 3: return "tterrag.tile.ironFence";
-    	default: return "tterrag.tile.invalidDoor";
-    	}
-    }
-	
+	public String getUnlocalizedName(ItemStack itemstack) {
+		return "tile.fence." + woodType[itemstack.getItemDamage()];
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Icon getIconFromDamage(int meta) {
