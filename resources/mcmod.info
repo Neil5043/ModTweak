@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ModTweak",
+  "name": "Mod Tweak",
+  "description": "I dun even no",
+  "mcversion": "1.6.4",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["niel, tterrag"],
+  "credits": "irc",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
