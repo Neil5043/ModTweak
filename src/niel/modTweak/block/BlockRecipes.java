@@ -1,4 +1,4 @@
-package niel.mod.block;
+package niel.modTweak.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

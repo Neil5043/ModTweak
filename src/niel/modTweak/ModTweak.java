@@ -1,12 +1,12 @@
-package niel;
+package niel.modTweak;
 
 
 import net.minecraft.creativetab.CreativeTabs;
-import niel.lib.ModLib;
-import niel.mod.block.ModTweakBlock;
-import niel.mod.creativeTab.CreativeTabModTweak;
-import niel.mod.item.ModTweakItem;
-import niel.proxy.CommonProxy;
+import niel.modTweak.block.ModTweakBlock;
+import niel.modTweak.creativeTab.CreativeTabModTweak;
+import niel.modTweak.item.ModTweakItem;
+import niel.modTweak.lib.Reference;
+import niel.modTweak.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -16,13 +16,13 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = ModLib.MOD_ID, name = ModLib.MOD_NAME, version = ModLib.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class ModTweak {
 
-    @Instance(ModLib.MOD_ID)
+    @Instance(Reference.MOD_ID)
     public static ModTweak instance;
 
-    @SidedProxy(clientSide = ModLib.CLIENT_PROXY_CLASS, serverSide = ModLib.SERVER_PROXY_CLASS)
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
 
     public static CreativeTabs tabStoneLamp = new CreativeTabModTweak(CreativeTabs.getNextID());

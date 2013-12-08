@@ -1,8 +1,8 @@
-package niel.mod.block;
+package niel.modTweak.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
-import niel.ModTweak;
+import niel.modTweak.ModTweak;
 
 public class BlockModStairs extends BlockStairs
 {

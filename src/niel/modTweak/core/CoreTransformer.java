@@ -1,4 +1,4 @@
-package niel.mod.core;
+package niel.modTweak.core;
 
 import java.util.Iterator;
 

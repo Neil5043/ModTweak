@@ -1,4 +1,4 @@
-package niel.mod.block;
+package niel.modTweak.block;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import niel.ModTweak;
+import niel.modTweak.ModTweak;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

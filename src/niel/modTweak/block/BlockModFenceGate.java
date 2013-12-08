@@ -1,9 +1,9 @@
-package niel.mod.block;
+package niel.modTweak.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.util.Icon;
-import niel.ModTweak;
+import niel.modTweak.ModTweak;
 
 public class BlockModFenceGate extends BlockFenceGate
 {

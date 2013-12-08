@@ -1,7 +1,7 @@
-package niel.mod.creativeTab;
+package niel.modTweak.creativeTab;
 
 import net.minecraft.creativetab.CreativeTabs;
-import niel.mod.block.ModTweakBlock;
+import niel.modTweak.block.ModTweakBlock;
 
 public class CreativeTabModTweak extends CreativeTabs {
 	

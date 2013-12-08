@@ -1,4 +1,4 @@
-package niel.proxy;
+package niel.modTweak.proxy;
 
 /**
  * Created with IntelliJ IDEA.

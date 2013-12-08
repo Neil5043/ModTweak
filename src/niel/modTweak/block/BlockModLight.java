@@ -1,4 +1,4 @@
-package niel.mod.block;
+package niel.modTweak.block;
 
 
 import java.util.Random;
@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import niel.ModTweak;
+import niel.modTweak.ModTweak;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -20,7 +20,7 @@ public class BlockModLight  extends BlockRedstoneLight {
         super(id, false);
         setHardness(1.0F);
         setCreativeTab(ModTweak.tabStoneLamp);
-        setUnlocalizedName(TweakBlock.BLOCKLIGHT_UNLOC_NAME);
+        setUnlocalizedName(TweakBlockInfo.BLOCKLIGHT_UNLOC_NAME);
         meta = 1;
     }
     

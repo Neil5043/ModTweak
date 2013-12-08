@@ -1,8 +1,8 @@
-package niel.mod.block;
+package niel.modTweak.block;
 
 import net.minecraft.block.Block;
-import niel.mod.item.ItemBlockModDoor;
-import niel.mod.item.ItemBlockModFence;
+import niel.modTweak.item.ItemBlockModDoor;
+import niel.modTweak.item.ItemBlockModFence;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
@@ -16,13 +16,13 @@ public class ModTweakBlock  {
 
 	public static void init()  {
 		//Fence
-		fence = new BlockModFence(TweakBlock.FENCE_ID);
+		fence = new BlockModFence(TweakBlockInfo.FENCE_ID);
 
 		//Fence Gate
-		birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, 0, TweakBlock.BIRCHGATE_UNLOC_NAME);
-		jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, 1, TweakBlock.JUNGLEGATE_UNLOC_NAME);
-		spruceGate = new BlockModFenceGate(TweakBlock.SPRUCEGATE_ID, 2, TweakBlock.SPRUCEGATE_UNLOC_NAME);
-		ironGate = new BlockModFenceGate(TweakBlock.IRONGATE_ID, 3, TweakBlock.IRONGATE_UNLOC_NAME);
+		birchGate = new BlockModFenceGate(TweakBlockInfo.BIRCHGATE_ID, 0, TweakBlockInfo.BIRCHGATE_UNLOC_NAME);
+		jungleGate = new BlockModFenceGate(TweakBlockInfo.JUNGLEGATE_ID, 1, TweakBlockInfo.JUNGLEGATE_UNLOC_NAME);
+		spruceGate = new BlockModFenceGate(TweakBlockInfo.SPRUCEGATE_ID, 2, TweakBlockInfo.SPRUCEGATE_UNLOC_NAME);
+		ironGate = new BlockModFenceGate(TweakBlockInfo.IRONGATE_ID, 3, TweakBlockInfo.IRONGATE_UNLOC_NAME);
 
 		//Door
 		//birchDoor = new BlockModDoor(TweakBlock.DOOR_ID);
@@ -31,40 +31,40 @@ public class ModTweakBlock  {
 
 
 		//light
-		blockLight = new BlockModLight(TweakBlock.BLOCKLIGHT_ID);
+		blockLight = new BlockModLight(TweakBlockInfo.BLOCKLIGHT_ID);
 
-		blockStair = new BlockModStairs(TweakBlock.STAIR_ID, Block.stone, 0);
-		modDoor = new BlockModDoor(TweakBlock.DOOR_ID);
+		blockStair = new BlockModStairs(TweakBlockInfo.STAIR_ID, Block.stone, 0);
+		modDoor = new BlockModDoor(TweakBlockInfo.DOOR_ID);
 
 		//Register Fence
 		//GameRegistry.registerBlock(fence, TweakBlock.FENCE_KEY);
 
 		//Register Fence Gate
-		GameRegistry.registerBlock(birchGate, TweakBlock.BIRCHGATE_UNLOC_NAME);
-		GameRegistry.registerBlock(jungleGate, TweakBlock.JUNGLEGATE_UNLOC_NAME);
-		GameRegistry.registerBlock(spruceGate, TweakBlock.SPRUCEGATE_UNLOC_NAME);
-		GameRegistry.registerBlock(ironGate, TweakBlock.IRONGATE_UNLOC_NAME);
+		GameRegistry.registerBlock(birchGate, TweakBlockInfo.BIRCHGATE_UNLOC_NAME);
+		GameRegistry.registerBlock(jungleGate, TweakBlockInfo.JUNGLEGATE_UNLOC_NAME);
+		GameRegistry.registerBlock(spruceGate, TweakBlockInfo.SPRUCEGATE_UNLOC_NAME);
+		GameRegistry.registerBlock(ironGate, TweakBlockInfo.IRONGATE_UNLOC_NAME);
 
-		GameRegistry.registerBlock(modDoor, ItemBlockModDoor.class, TweakBlock.DOOR_KEY);
-		GameRegistry.registerBlock(fence, ItemBlockModFence.class, TweakBlock.FENCE_KEY);
+		GameRegistry.registerBlock(modDoor, ItemBlockModDoor.class, TweakBlockInfo.DOOR_KEY);
+		GameRegistry.registerBlock(fence, ItemBlockModFence.class, TweakBlockInfo.FENCE_KEY);
 
 
 		//Register Derp Doors
 		//GameRegistry.registerBlock(birchDoor, TweakBlock.BIRCHDOOR_KEY);
 
 		//Register Light
-		GameRegistry.registerBlock(blockLight, TweakBlock.BLOCKLIGHT_KEY);
+		GameRegistry.registerBlock(blockLight, TweakBlockInfo.BLOCKLIGHT_KEY);
 
-		GameRegistry.registerBlock(blockStair, TweakBlock.STAIR_KEY);
+		GameRegistry.registerBlock(blockStair, TweakBlockInfo.STAIR_KEY);
 
 		//Add Fences to connections
-		TweakBlock.fenceIDs.add(TweakBlock.FENCE_ID);
+		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.FENCE_ID);
 
 		//Add Fence Gates to connections
-		TweakBlock.fenceIDs.add(TweakBlock.BIRCHGATE_ID);
-		TweakBlock.fenceIDs.add(TweakBlock.JUNGLEGATE_ID);
-		TweakBlock.fenceIDs.add(TweakBlock.SPRUCEGATE_ID);
-		TweakBlock.fenceIDs.add(TweakBlock.IRONGATE_ID);
+		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.BIRCHGATE_ID);
+		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.JUNGLEGATE_ID);
+		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.SPRUCEGATE_ID);
+		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.IRONGATE_ID);
 	}
 
 	public static void addNames() {

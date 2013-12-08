@@ -1,8 +1,8 @@
-package niel.mod.block;
+package niel.modTweak.block;
 
 import java.util.ArrayList;
 
-public class TweakBlock {
+public class TweakBlockInfo {
 
     // Textures Location
     public static final String TEXTURE_LOC = "example";

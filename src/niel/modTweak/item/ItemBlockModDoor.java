@@ -1,4 +1,4 @@
-package niel.mod.item;
+package niel.modTweak.item;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import niel.ModTweak;
-import niel.mod.block.ModTweakBlock;
+import niel.modTweak.ModTweak;
+import niel.modTweak.block.ModTweakBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

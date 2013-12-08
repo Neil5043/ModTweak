@@ -1,6 +1,6 @@
-package niel.lib;
+package niel.modTweak.lib;
 
-public class ModLib
+public class Reference
 {
     public static final String MOD_ID = "ModTweak";
     public static final String MOD_NAME = "Mod Tweak";

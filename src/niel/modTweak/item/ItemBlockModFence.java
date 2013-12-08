@@ -1,4 +1,4 @@
-package niel.mod.item;
+package niel.modTweak.item;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
-import niel.ModTweak;
-import niel.mod.block.BlockModFence;
-import niel.mod.block.ModTweakBlock;
+import niel.modTweak.ModTweak;
+import niel.modTweak.block.BlockModFence;
+import niel.modTweak.block.ModTweakBlock;
 
 public class ItemBlockModFence extends ItemBlock
 {

@@ -1,4 +1,4 @@
-package niel.mod.block;
+package niel.modTweak.block;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
-import niel.ModTweak;
+import niel.modTweak.ModTweak;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -40,7 +40,7 @@ public class BlockModFence extends BlockFence
 
 		if (l != this.blockID && l != Block.fenceGate.blockID && l != Block.fence.blockID)
 		{
-			for (Integer i : TweakBlock.fenceIDs)
+			for (Integer i : TweakBlockInfo.fenceIDs)
 			{
 				if (((Integer)l).compareTo(i) == 0)
 					return true;

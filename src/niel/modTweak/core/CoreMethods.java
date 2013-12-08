@@ -1,8 +1,8 @@
-package niel.mod.core;
+package niel.modTweak.core;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import niel.mod.block.TweakBlock;
+import niel.modTweak.block.TweakBlockInfo;
 import cpw.mods.fml.common.Loader;
 import crazypants.enderio.EnderIO;
 
@@ -17,7 +17,7 @@ public class CoreMethods {
         {
             Block block = Block.blocksList[l];
             
-            for (Integer i : TweakBlock.fenceIDs)
+            for (Integer i : TweakBlockInfo.fenceIDs)
             {
             	if (i.equals(l))
             		return true;
@@ -45,7 +45,7 @@ public class CoreMethods {
         {
             Block block = Block.blocksList[l];
             
-            for (Integer i : TweakBlock.fenceIDs)
+            for (Integer i : TweakBlockInfo.fenceIDs)
             {
             	if (i.equals(l))
             		return true;
