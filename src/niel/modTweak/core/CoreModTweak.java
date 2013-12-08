@@ -12,7 +12,7 @@ public class CoreModTweak implements IFMLLoadingPlugin {
 
 	@Override
 	public String[] getASMTransformerClass() {
-		return new String[] {"niel.mod.core.CoreTransformer"};
+		return new String[] {"niel.modTweak.core.CoreTransformer"};
 	}
 
 	@Override
