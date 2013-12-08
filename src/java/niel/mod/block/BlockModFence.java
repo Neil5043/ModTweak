@@ -60,14 +60,20 @@ public class BlockModFence extends BlockFence
 			return true;
 		}
 	}
+	
+	Icon[] icons = new Icon[4];
 
 	@Override
 	public Icon getIcon(int par1, int par2)
 	{
-		if (par2 < 3)
-			return Block.planks.getIcon(0, par2 + 1);
-		
-		return Block.blockIron.getIcon(0, 0);
+		if (icons[0] == null)
+		{
+			for (int i = 1; i < 4; i++)
+				icons[i-1] = Block.planks.getIcon(i, i);
+			icons[3] = Block.blockIron.getIcon(0, 0);
+		}
+
+		return icons[par2];
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import niel.ModTweak;
 import niel.mod.block.BlockModFence;
+import niel.mod.block.ModTweakBlock;
 
 public class ItemBlockModFence extends ItemBlock
 {
@@ -41,13 +42,5 @@ public class ItemBlockModFence extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack) {
 		return "tile.fence." + woodType[itemstack.getItemDamage()];
 	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public Icon getIconFromDamage(int meta) {
-		if (meta < 3)
-			return Block.planks.getIcon(meta + 1, meta + 1);		
-		return Block.blockIron.getIcon(0, 0);
-	}
-
+	
 }
