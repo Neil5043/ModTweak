@@ -14,42 +14,37 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class ModTweak {
 
-    @Instance(Reference.MOD_ID)
-    public static ModTweak instance;
+	@Instance(Reference.MOD_ID)
+	public static ModTweak instance;
 
-    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-    public static CommonProxy proxy;
+	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+	public static CommonProxy proxy;
 
-    public static CreativeTabs tabStoneLamp = new CreativeTabModTweak(CreativeTabs.getNextID());
-    
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+	public static CreativeTabs tabStoneLamp = new CreativeTabModTweak(CreativeTabs.getNextID());
 
-        ModTweakItem.init();
-        ModTweakBlock.init();
-        
-        LanguageRegistry.instance().addStringLocalization("itemGroup." + "modTweak" , "en_US", "Mod Tweak");
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		ModTweakItem.init();
+		ModTweakBlock.init();
+	}
 
-    }
+	@EventHandler
+	public void init(FMLInitializationEvent event)
+	{
+		ModTweakItem.addNames();
+		ModTweakItem.registerRecipes();
+		ModTweakBlock.addNames();
+		ModTweakBlock.registerRecipes();
+	}
 
-    @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-        ModTweakItem.addNames();
-        ModTweakItem.registerRecipes();
-        ModTweakBlock.addNames();
-        ModTweakBlock.registerRecipes();
-    }
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event)
+	{
 
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
-
-}
+	}
 }

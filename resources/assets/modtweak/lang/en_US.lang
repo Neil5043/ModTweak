@@ -1,0 +1,6 @@
+tile.fence.spruce.name=Spruce Fence
+tile.fence.jungle.name=Jungle Fence
+tile.fence.birch.name=Birch Fence
+tile.fence.iron.name=Iron Fence
+
+itemGroup.modTweak=Mod Tweak

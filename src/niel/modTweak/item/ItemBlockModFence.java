@@ -2,16 +2,14 @@ package niel.modTweak.item;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import niel.modTweak.ModTweak;
-import niel.modTweak.block.BlockModFence;
 import niel.modTweak.block.ModTweakBlock;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBlockModFence extends ItemBlock
 {
@@ -19,15 +17,21 @@ public class ItemBlockModFence extends ItemBlock
 	public ItemBlockModFence(int par1)
 	{
 		super(par1);
-		setCreativeTab(ModTweak.tabStoneLamp);
-		setHasSubtypes(true);
-		setUnlocalizedName("fence");
+		//setCreativeTab(ModTweak.tabStoneLamp);
 		setMaxDamage(0);
+		setHasSubtypes(true);
 	}
 
 	@Override
-	public int getMetadata (int damageValue) {
-		return damageValue;
+	@SideOnly(Side.CLIENT)
+	public Icon getIconFromDamage(int par1)
+	{	
+		return ModTweakBlock.fence.getIcon(2, ModTweakBlock.fence.damageDropped(par1));
+	}
+
+	@Override
+	public int getMetadata (int meta) {
+		return meta;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -40,7 +44,7 @@ public class ItemBlockModFence extends ItemBlock
 
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack) {
-		return "tile.fence." + woodType[itemstack.getItemDamage()];
+		return super.getUnlocalizedName()+ "." + woodType[itemstack.getItemDamage()];
 	}
-	
+
 }

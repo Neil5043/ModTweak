@@ -5,7 +5,6 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
@@ -18,10 +17,9 @@ import crazypants.enderio.EnderIO;
 
 public class BlockModFence extends BlockFence
 {
-	public static final String[] woodType = new String[] {"oak", "spruce", "birch", "jungle"};
 	@SideOnly(Side.CLIENT)
 	public BlockModFence(int id) {
-		super(id, "planks", Material.wood);
+		super(id, "", Material.wood);
 		setHardness(4.0F);
 		setCreativeTab(ModTweak.tabStoneLamp);
 	}
@@ -60,9 +58,17 @@ public class BlockModFence extends BlockFence
 			return true;
 		}
 	}
-	
-	Icon[] icons = new Icon[4];
 
+
+	public int damageDropped(int par1)
+	{
+		return ~par1 & 3;
+	}
+	public int getRenderType()
+	{
+		return 11;
+	}
+	Icon[] icons = new Icon[4];
 	@Override
 	public Icon getIcon(int par1, int par2)
 	{
@@ -72,7 +78,6 @@ public class BlockModFence extends BlockFence
 				icons[i-1] = Block.planks.getIcon(i, i);
 			icons[3] = Block.blockIron.getIcon(0, 0);
 		}
-
 		return icons[par2];
 	}
 

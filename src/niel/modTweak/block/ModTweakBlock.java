@@ -16,8 +16,7 @@ public class ModTweakBlock  {
 
 	public static void init()  {
 		//Fence
-		fence = new BlockModFence(TweakBlockInfo.FENCE_ID);
-
+		fence = new BlockModFence(TweakBlockInfo.FENCE_ID).setUnlocalizedName("fence");
 		//Fence Gate
 		birchGate = new BlockModFenceGate(TweakBlockInfo.BIRCHGATE_ID, 0, TweakBlockInfo.BIRCHGATE_UNLOC_NAME);
 		jungleGate = new BlockModFenceGate(TweakBlockInfo.JUNGLEGATE_ID, 1, TweakBlockInfo.JUNGLEGATE_UNLOC_NAME);
@@ -68,11 +67,6 @@ public class ModTweakBlock  {
 	}
 
 	public static void addNames() {
-
-		//LanguageRegistry.instance().addStringLocalization("tterrag.tile.birchFence.name", "Birch Fence");   
-		//LanguageRegistry.instance().addStringLocalization("tterrag.tile.jungleFence.name", "Jungle Fence");   
-		//LanguageRegistry.instance().addStringLocalization("tterrag.tile.spruceFence.name", "Spruce Fence");
-		//LanguageRegistry.instance().addStringLocalization("tterrag.tile.ironFence.name", "Iron Fence");
 
 		//LanguageRegistry.addName(birchGate, TweakBlock.BIRCHGATE_NAME);
 		//LanguageRegistry.addName(jungleGate, TweakBlock.JUNGLEGATE_NAME);
