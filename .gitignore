@@ -2,3 +2,4 @@ bin
 run
 .classpath
 .project
+.settings
