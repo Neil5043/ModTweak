@@ -19,10 +19,10 @@ public class ModTweakBlock  {
 		fence = new BlockModFence(TweakBlock.FENCE_ID);
 
 		//Fence Gate
-		birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[0], TweakBlock.BIRCHGATE_UNLOC_NAME);
-		jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[1], TweakBlock.JUNGLEGATE_UNLOC_NAME);
-		spruceGate = new BlockModFenceGate(TweakBlock.SPRUCEGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[2], TweakBlock.SPRUCEGATE_UNLOC_NAME);
-		ironGate = new BlockModFenceGate(TweakBlock.IRONGATE_ID, TweakBlock.GATE_TEXTURE_NAMES[3], TweakBlock.IRONGATE_UNLOC_NAME);
+		birchGate = new BlockModFenceGate(TweakBlock.BIRCHGATE_ID, 0, TweakBlock.BIRCHGATE_UNLOC_NAME);
+		jungleGate = new BlockModFenceGate(TweakBlock.JUNGLEGATE_ID, 1, TweakBlock.JUNGLEGATE_UNLOC_NAME);
+		spruceGate = new BlockModFenceGate(TweakBlock.SPRUCEGATE_ID, 2, TweakBlock.SPRUCEGATE_UNLOC_NAME);
+		ironGate = new BlockModFenceGate(TweakBlock.IRONGATE_ID, 3, TweakBlock.IRONGATE_UNLOC_NAME);
 
 		//Door
 		//birchDoor = new BlockModDoor(TweakBlock.DOOR_ID);

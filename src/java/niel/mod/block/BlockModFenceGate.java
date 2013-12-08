@@ -1,38 +1,35 @@
 package niel.mod.block;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockFenceGate;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import niel.ModTweak;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockModFenceGate extends BlockFenceGate
 {
 
-	private String textureName;
+	private int iconIndex;
+	private Icon[] icons = new Icon[4];
 
-	public BlockModFenceGate(int id, String textureName, String unlocName)
+	public BlockModFenceGate(int id, int index, String unlocName)
 	{
 		super(id);
 		setHardness(4.0F);
-		this.textureName = textureName;
 		setUnlocalizedName(unlocName);
 		setCreativeTab(ModTweak.tabStoneLamp);
-	}
-
-	@SideOnly(Side.CLIENT)
-	private Icon icon;
-
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister par1IconRegister)
-	{
-		icon = par1IconRegister.registerIcon("modtweak:" + textureName);
+		this.iconIndex = index;
 	}
 
 	@Override
 	public Icon getIcon(int par1, int par2)
 	{
-		return icon;
+		if (icons[0] == null)
+		{
+			for (int i = 1; i < 4; i++)
+				icons[i-1] = Block.planks.getIcon(i, i);
+			icons[3] = Block.blockIron.getIcon(0, 0);
+		}
+
+		return icons[iconIndex];
 	}
 }
