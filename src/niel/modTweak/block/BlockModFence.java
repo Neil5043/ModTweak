@@ -66,8 +66,9 @@ public class BlockModFence extends BlockFence
 	}
 	public int getRenderType()
 	{
-		return 11;
+		return ModTweak.fenceRenderID;
 	}
+	
 	Icon[] icons = new Icon[4];
 	@Override
 	public Icon getIcon(int par1, int par2)

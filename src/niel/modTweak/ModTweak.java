@@ -3,10 +3,12 @@ package niel.modTweak;
 
 import net.minecraft.creativetab.CreativeTabs;
 import niel.modTweak.block.ModTweakBlock;
+import niel.modTweak.client.FenceRenderer;
 import niel.modTweak.creativeTab.CreativeTabModTweak;
 import niel.modTweak.item.ModTweakItem;
 import niel.modTweak.lib.Reference;
 import niel.modTweak.proxy.CommonProxy;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -26,11 +28,16 @@ public class ModTweak {
 
 	public static CreativeTabs tabStoneLamp = new CreativeTabModTweak(CreativeTabs.getNextID());
 
+	public static int fenceRenderID;
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		ModTweakItem.init();
 		ModTweakBlock.init();
+		
+		fenceRenderID = RenderingRegistry.getNextAvailableRenderId();
+		RenderingRegistry.registerBlockHandler(new FenceRenderer());
 	}
 
 	@EventHandler
