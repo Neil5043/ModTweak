@@ -18,7 +18,8 @@ import crazypants.enderio.EnderIO;
 public class BlockModFence extends BlockFence
 {
 	@SideOnly(Side.CLIENT)
-	public BlockModFence(int id) {
+	public BlockModFence(int id)
+	{
 		super(id, "", Material.wood);
 		setHardness(4.0F);
 		setCreativeTab(ModTweak.tabStoneLamp);
@@ -32,15 +33,15 @@ public class BlockModFence extends BlockFence
 	}
 
 	@Override
-	public boolean canConnectFenceTo(IBlockAccess blockAccess, int par2,
-			int par3, int par4) {
+	public boolean canConnectFenceTo(IBlockAccess blockAccess, int par2, int par3, int par4)
+	{
 		int l = blockAccess.getBlockId(par2, par3, par4);
 
 		if (l != this.blockID && l != Block.fenceGate.blockID && l != Block.fence.blockID)
 		{
 			for (Integer i : TweakBlockInfo.fenceIDs)
 			{
-				if (((Integer)l).compareTo(i) == 0)
+				if (((Integer) l).compareTo(i) == 0)
 					return true;
 			}
 
@@ -59,24 +60,27 @@ public class BlockModFence extends BlockFence
 		}
 	}
 
-
+	@Override
 	public int damageDropped(int par1)
 	{
 		return ~par1 & 3;
 	}
+
+	@Override
 	public int getRenderType()
 	{
 		return ModTweak.fenceRenderID;
 	}
-	
+
 	Icon[] icons = new Icon[4];
+
 	@Override
 	public Icon getIcon(int par1, int par2)
 	{
 		if (icons[0] == null)
 		{
 			for (int i = 1; i < 4; i++)
-				icons[i-1] = Block.planks.getIcon(i, i);
+				icons[i - 1] = Block.planks.getIcon(i, i);
 			icons[3] = Block.blockIron.getIcon(0, 0);
 		}
 		return icons[par2];

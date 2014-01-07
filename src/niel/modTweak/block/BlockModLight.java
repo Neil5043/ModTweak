@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.minecraft.block.BlockRedstoneLight;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import niel.modTweak.ModTweak;
@@ -25,6 +24,7 @@ public class BlockModLight extends BlockRedstoneLight
 	@SideOnly(Side.CLIENT)
 	private Icon iconActive, iconInactive;
 
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister register)
 	{
@@ -46,6 +46,7 @@ public class BlockModLight extends BlockRedstoneLight
 	/**
 	 * Called whenever the block is added into the world. Args: world, x, y, z
 	 */
+	@Override
 	public void onBlockAdded(World world, int x, int y, int z)
 	{
 		if (!world.isRemote)
@@ -66,6 +67,7 @@ public class BlockModLight extends BlockRedstoneLight
 	 * neighbor changed (coordinates passed are their own) Args: x, y, z,
 	 * neighbor blockID
 	 */
+	@Override
 	public void onNeighborBlockChange(World world, int x, int y, int z, int par5)
 	{
 		if (!world.isRemote)
@@ -88,6 +90,7 @@ public class BlockModLight extends BlockRedstoneLight
 	/**
 	 * Ticks the block if it's been scheduled
 	 */
+	@Override
 	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
 	{
 		if (!par1World.isRemote && isActive(par1World, par2, par3, par4) && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
@@ -103,11 +106,13 @@ public class BlockModLight extends BlockRedstoneLight
 	/**
 	 * Returns the ID of the items to drop on destruction.
 	 */
+	@Override
 	public int idDropped(int par1, Random par2Random, int par3)
 	{
 		return this.blockID;
 	}
 
+	@Override
 	@SideOnly(Side.CLIENT)
 	/**
 	 * only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)

@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
@@ -76,7 +75,7 @@ public class ItemBlockModDoor extends ItemBlock {
 		}
 		else
 		{
-			int rotate = MathHelper.floor_double((double) (((player.rotationYaw + 180F) * 4F) / 360F) - 0.5D) & 3;
+			int rotate = MathHelper.floor_double(((player.rotationYaw + 180F) * 4F) / 360F - 0.5D) & 3;
 			placeDoorBlock(world, x, y, z, rotate, block);
 			itemstack.stackSize--;
 			return true;
