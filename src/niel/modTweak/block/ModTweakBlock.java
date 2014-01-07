@@ -1,7 +1,8 @@
 package niel.modTweak.block;
 
 import net.minecraft.block.Block;
-import niel.modTweak.item.ItemBlockModDoor;
+import net.minecraft.item.Item;
+import niel.modTweak.item.ItemModDoor;
 import niel.modTweak.item.ItemBlockModFence;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -13,6 +14,7 @@ public class ModTweakBlock  {
 	public static Block modDoor, birchDoor, jungleDoor, spruceDoor;
 	public static Block blockLight;
 	public static Block blockStair;
+	public static Item doorItem;
 
 	public static void init()  {
 		//Fence
@@ -33,7 +35,14 @@ public class ModTweakBlock  {
 		blockLight = new BlockModLight(TweakBlockInfo.BLOCKLIGHT_ID);
 
 		blockStair = new BlockModStairs(TweakBlockInfo.STAIR_ID, Block.stone, 0);
-		modDoor = new BlockModDoor(TweakBlockInfo.DOOR_ID);
+		
+		doorItem = new ItemModDoor(24000).setUnlocalizedName("modTweakDoorItem");
+		GameRegistry.registerItem(doorItem, "modTweakDoorItem");
+		
+		birchDoor = new BlockModDoor(3110, 0, "doorBirch").setUnlocalizedName("doorBirch");
+		jungleDoor = new BlockModDoor(3111, 0, "doorJungle").setUnlocalizedName("doorJungle");
+		spruceDoor = new BlockModDoor(3112, 0, "doorSpruce").setUnlocalizedName("doorSpruce");
+
 
 		//Register Fence
 		//GameRegistry.registerBlock(fence, TweakBlock.FENCE_KEY);
@@ -44,7 +53,9 @@ public class ModTweakBlock  {
 		GameRegistry.registerBlock(spruceGate, TweakBlockInfo.SPRUCEGATE_UNLOC_NAME);
 		GameRegistry.registerBlock(ironGate, TweakBlockInfo.IRONGATE_UNLOC_NAME);
 
-		GameRegistry.registerBlock(modDoor, ItemBlockModDoor.class, TweakBlockInfo.DOOR_KEY);
+		GameRegistry.registerBlock(birchDoor, "doorBirch");
+		GameRegistry.registerBlock(jungleDoor, "doorJungle");
+		GameRegistry.registerBlock(spruceDoor, "doorSpruce");
 		GameRegistry.registerBlock(fence, ItemBlockModFence.class, TweakBlockInfo.FENCE_KEY);
 
 

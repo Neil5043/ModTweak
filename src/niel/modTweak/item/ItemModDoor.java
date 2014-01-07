@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
@@ -16,12 +16,12 @@ import niel.modTweak.block.ModTweakBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBlockModDoor extends ItemBlock {
+public class ItemModDoor extends Item {
 
 	public Icon[] icons;
 	public String[] textureNames = new String[]{"birchDoorItem", "jungleDoorItem", "spruceDoorItem"};
 
-	public ItemBlockModDoor(int id)
+	public ItemModDoor(int id)
 	{
 		super(id);
 		maxStackSize = 16;
@@ -63,7 +63,7 @@ public class ItemBlockModDoor extends ItemBlock {
 		}
 		y++;
 
-		Block block = ModTweakBlock.modDoor;
+		Block block = Block.blocksList[ModTweakBlock.birchDoor.blockID + itemstack.getItemDamage()];
 
 		if (!player.canPlayerEdit(x, y, z, side, itemstack) || !player.canPlayerEdit(x, y + 1, z, side, itemstack))
 		{

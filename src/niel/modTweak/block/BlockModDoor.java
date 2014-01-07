@@ -24,17 +24,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockModDoor extends BlockDoor
 {
     @SideOnly(Side.CLIENT)
-    private Icon[] rearIcons;
-    @SideOnly(Side.CLIENT)
-    private Icon[] frontIcons;
+    private Icon[] icons;
+    
+    private String name;
+    private int damage;
 
-    protected BlockModDoor(int par1)
+    public BlockModDoor(int par1, int damage, String doorName)
     {
         super(par1, Material.wood);
         float f = 0.5F;
         float f1 = 1.0F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f1, 0.5F + f);
-        setCreativeTab(ModTweak.tabStoneLamp);
+        
+        this.name = doorName;
+        this.damage = damage;
     }
 
     @Override
@@ -44,13 +47,24 @@ public class BlockModDoor extends BlockDoor
      */
     public Icon getIcon(int par1, int par2)
     {
-        return this.frontIcons[0];
+        return this.icons[0];
     }
     
     @Override
-    public Icon getBlockTexture(IBlockAccess par1iBlockAccess, int par2, int par3, int par4, int par5)
+    public Icon getBlockTexture(IBlockAccess blockAccess, int par2, int par3, int par4, int par5)
     {
-    	return frontIcons[0];
+    	if (par5 != 1 && par5 != 0)
+        {
+            int i1 = this.getFullMetadata(blockAccess, par2, par3, par4);
+            int j1 = i1 & 3;
+            boolean flag2 = (i1 & 8) != 0;
+
+            return this.icons[(flag2 ? 1 : 0)];
+        }
+        else
+        {
+            return this.icons[0];
+        }
     }
 
     @Override
@@ -59,14 +73,28 @@ public class BlockModDoor extends BlockDoor
      * When this method is called, your block should register all the icons it needs with the given IconRegister. This
      * is the only chance you get to register icons.
      */
-    public void registerIcons(IconRegister par1IconRegister)
+    public void registerIcons(IconRegister register)
     {
-        this.rearIcons = new Icon[2];
-        this.frontIcons = new Icon[2];
-        this.rearIcons[0] = par1IconRegister.registerIcon(this.getTextureName() + "_upper");
-        this.frontIcons[0] = par1IconRegister.registerIcon(this.getTextureName() + "_lower");
+        this.icons = new Icon[2];
+      
+        icons[0] = register.registerIcon("modtweak:" + name + "_upper");
+        icons[1] = register.registerIcon("modtweak:" + name + "_lower");
+        
+        /*this.rearIcons[0] = register.registerIcon("modtweak:doorBirch_upper");
+        this.frontIcons[0] = register.registerIcon("modtweak:doorBirch_lower");
         this.rearIcons[1] = new IconFlipped(this.rearIcons[0], true, false);
         this.frontIcons[1] = new IconFlipped(this.frontIcons[0], true, false);
+        
+        this.rearIcons[2] = register.registerIcon("modtweak:doorJungle_upper");
+        this.frontIcons[2] = register.registerIcon("modtweak:doorJungle_lower");
+        this.rearIcons[3] = new IconFlipped(this.rearIcons[2], true, false);
+        this.frontIcons[3] = new IconFlipped(this.frontIcons[2], true, false);
+        
+        this.rearIcons[4] = register.registerIcon("modtweak:doorJungle_upper");
+        this.frontIcons[4] = register.registerIcon("modtweak:doorJungle_lower");
+        this.rearIcons[5] = new IconFlipped(this.rearIcons[4], true, false);
+        this.frontIcons[5] = new IconFlipped(this.frontIcons[4], true, false);
+    */
     }
 
     /**
