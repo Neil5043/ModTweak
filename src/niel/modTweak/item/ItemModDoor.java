@@ -44,7 +44,7 @@ public class ItemModDoor extends Item {
 		this.icons = new Icon[textureNames.length];
 
 		for (int i = 0; i < textureNames.length; i++)
-			icons[i] = register.registerIcon(textureNames[i]);
+			icons[i] = register.registerIcon("modtweak:" + textureNames[i]);
 	}
 
 	@Override
@@ -133,10 +133,10 @@ public class ItemModDoor extends Item {
 	{
 		switch(par1ItemStack.getItemDamage())
 		{
-		case 0: return "tterrag.tile.birchDoor";
-		case 1: return "tterrag.tile.jungleDoor";
-		case 2: return "tterrag.tile.spruceDoor";
-		default: return "tterrag.tile.invalidDoor";
+		case 0: return "tile.birchDoor";
+		case 1: return "tile.jungleDoor";
+		case 2: return "tile.spruceDoor";
+		default: return "tile.invalidDoor";
 		}
 	}
 }

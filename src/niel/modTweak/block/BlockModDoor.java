@@ -2,6 +2,7 @@ package niel.modTweak.block;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.IconFlipped;
@@ -35,7 +36,8 @@ public class BlockModDoor extends BlockDoor
         float f = 0.5F;
         float f1 = 1.0F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f1, 0.5F + f);
-        
+        this.setHardness(3F);
+        this.setStepSound(Block.soundWoodFootstep);
         this.name = doorName;
         this.damage = damage;
     }
@@ -109,9 +111,15 @@ public class BlockModDoor extends BlockDoor
      * Returns the ID of the items to drop on destruction.
      */
     @Override
-	public int idDropped(int par1, Random par2Random, int par3)
+	public int idDropped(int meta, Random par2Random, int par3)
     {
-    	return this.blockID;
+    	return (meta & 8) != 0 ? 0 : ModTweakBlock.doorItem.itemID;
+    }
+    
+    @Override
+    public int damageDropped(int par1)
+    {
+    	return damage;
     }
 
     /**

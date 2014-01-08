@@ -40,8 +40,8 @@ public class ModTweakBlock  {
 		GameRegistry.registerItem(doorItem, "modTweakDoorItem");
 		
 		birchDoor = new BlockModDoor(3110, 0, "doorBirch").setUnlocalizedName("doorBirch");
-		jungleDoor = new BlockModDoor(3111, 0, "doorJungle").setUnlocalizedName("doorJungle");
-		spruceDoor = new BlockModDoor(3112, 0, "doorSpruce").setUnlocalizedName("doorSpruce");
+		jungleDoor = new BlockModDoor(3111, 1, "doorJungle").setUnlocalizedName("doorJungle");
+		spruceDoor = new BlockModDoor(3112, 2, "doorSpruce").setUnlocalizedName("doorSpruce");
 
 
 		//Register Fence
