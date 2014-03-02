@@ -1,4 +1,13 @@
-bin
-run
-.classpath
-.settings
+*.class
+
+# Package Files #
+*.war
+*.ear
+/build
+/eclipse
+/bin
+
+*.classpath
+*.project
+/.settings
+/config
