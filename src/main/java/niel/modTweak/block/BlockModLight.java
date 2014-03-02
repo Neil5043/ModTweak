@@ -2,9 +2,13 @@ package niel.modTweak.block;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockRedstoneLight;
-import net.minecraft.client.renderer.texture.IIIconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import niel.modTweak.ModTweak;
 import cpw.mods.fml.relauncher.Side;
@@ -13,12 +17,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockModLight extends BlockRedstoneLight
 {
 
-	public BlockModLight(int id)
+	public BlockModLight()
 	{
-		super(id, false);
+		super(false);
 		setHardness(1.0F);
 		setCreativeTab(ModTweak.tabStoneLamp);
-		setUnlocalizedName(TweakBlockInfo.BLOCKLIGHT_UNLOC_NAME);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -26,14 +29,14 @@ public class BlockModLight extends BlockRedstoneLight
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIIcons(IIIconRegister register)
+	public void registerBlockIcons(IIconRegister register)
 	{
-		IIconActive = register.registerIIcon("modtweak:" + "light_on");
-		IIconInactive = register.registerIIcon("modtweak:" + "light_off");
+		IIconActive = register.registerIcon("modtweak:" + "light_on");
+		IIconInactive = register.registerIcon("modtweak:" + "light_off");
 	}
 
 	@Override
-	public IIcon getIIcon(int par1, int par2)
+	public IIcon getIcon(int par1, int par2)
 	{
 		return par2 == 0 ? IIconInactive : IIconActive;
 	}
@@ -68,7 +71,7 @@ public class BlockModLight extends BlockRedstoneLight
 	 * neighbor blockID
 	 */
 	@Override
-	public void onNeighborBlockChange(World world, int x, int y, int z, int par5)
+	public void onNeighborBlockChange(World world, int x, int y, int z, Block block)
 	{
 		if (!world.isRemote)
 		{
@@ -82,9 +85,9 @@ public class BlockModLight extends BlockRedstoneLight
 			}
 		}
 		if (isActive(world, x, y, z))
-			this.setLightValue(1.0F);
+			this.setLightLevel(1.0F);
 		else
-			this.setLightValue(0.0F);
+			this.setLightLevel(0.0F);
 	}
 
 	/**
@@ -107,9 +110,9 @@ public class BlockModLight extends BlockRedstoneLight
 	 * Returns the ID of the items to drop on destruction.
 	 */
 	@Override
-	public int idDropped(int par1, Random par2Random, int par3)
+	public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
 	{
-		return this.blockID;
+		return this.getItem(null, 0, 0, 0);
 	}
 
 	@Override
@@ -117,9 +120,9 @@ public class BlockModLight extends BlockRedstoneLight
 	/**
 	 * only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)
 	 */
-	public int idPicked(World par1World, int par2, int par3, int par4)
+	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z)
 	{
-		return this.blockID;
+		return new ItemStack(this);
 	}
 
 	@Override

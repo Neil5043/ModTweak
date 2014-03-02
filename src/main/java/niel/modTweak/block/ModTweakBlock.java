@@ -1,9 +1,10 @@
 package niel.modTweak.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import niel.modTweak.item.ItemModDoor;
 import niel.modTweak.item.ItemBlockModFence;
+import niel.modTweak.item.ItemModDoor;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
@@ -18,12 +19,12 @@ public class ModTweakBlock  {
 
 	public static void init()  {
 		//Fence
-		fence = new BlockModFence(TweakBlockInfo.FENCE_ID).setUnlocalizedName("fence");
+		fence = new BlockModFence().setBlockName("fence");
 		//Fence Gate
-		birchGate = new BlockModFenceGate(TweakBlockInfo.BIRCHGATE_ID, 0, TweakBlockInfo.BIRCHGATE_UNLOC_NAME);
-		jungleGate = new BlockModFenceGate(TweakBlockInfo.JUNGLEGATE_ID, 1, TweakBlockInfo.JUNGLEGATE_UNLOC_NAME);
-		spruceGate = new BlockModFenceGate(TweakBlockInfo.SPRUCEGATE_ID, 2, TweakBlockInfo.SPRUCEGATE_UNLOC_NAME);
-		ironGate = new BlockModFenceGate(TweakBlockInfo.IRONGATE_ID, 3, TweakBlockInfo.IRONGATE_UNLOC_NAME);
+		birchGate = new BlockModFenceGate(0, TweakBlockInfo.BIRCHGATE_UNLOC_NAME);
+		jungleGate = new BlockModFenceGate(1, TweakBlockInfo.JUNGLEGATE_UNLOC_NAME);
+		spruceGate = new BlockModFenceGate(2, TweakBlockInfo.SPRUCEGATE_UNLOC_NAME);
+		ironGate = new BlockModFenceGate(3, TweakBlockInfo.IRONGATE_UNLOC_NAME);
 
 		//Door
 		//birchDoor = new BlockModDoor(TweakBlock.DOOR_ID);
@@ -32,16 +33,16 @@ public class ModTweakBlock  {
 
 
 		//light
-		blockLight = new BlockModLight(TweakBlockInfo.BLOCKLIGHT_ID);
+		blockLight = new BlockModLight();
 
-		blockStair = new BlockModStairs(TweakBlockInfo.STAIR_ID, Block.stone, 0);
+		blockStair = new BlockModStairs(Blocks.stone, 0);
 		
-		doorItem = new ItemModDoor(24000).setUnlocalizedName("modTweakDoorItem");
+		doorItem = new ItemModDoor().setUnlocalizedName("modTweakDoorItem");
 		GameRegistry.registerItem(doorItem, "modTweakDoorItem");
 		
-		birchDoor = new BlockModDoor(3110, 0, "doorBirch").setUnlocalizedName("doorBirch");
-		jungleDoor = new BlockModDoor(3111, 1, "doorJungle").setUnlocalizedName("doorJungle");
-		spruceDoor = new BlockModDoor(3112, 2, "doorSpruce").setUnlocalizedName("doorSpruce");
+		birchDoor = new BlockModDoor(0, "doorBirch").setBlockName("doorBirch");
+		jungleDoor = new BlockModDoor(1, "doorJungle").setBlockName("doorJungle");
+		spruceDoor = new BlockModDoor(2, "doorSpruce").setBlockName("doorSpruce");
 
 
 		//Register Fence
@@ -68,13 +69,13 @@ public class ModTweakBlock  {
 		GameRegistry.registerBlock(blockStair, TweakBlockInfo.STAIR_KEY);
 
 		//Add Fences to connections
-		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.FENCE_ID);
+		TweakBlockInfo.fences.add(ModTweakBlock.fence);
 
 		//Add Fence Gates to connections
-		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.BIRCHGATE_ID);
-		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.JUNGLEGATE_ID);
-		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.SPRUCEGATE_ID);
-		TweakBlockInfo.fenceIDs.add(TweakBlockInfo.IRONGATE_ID);
+		TweakBlockInfo.fences.add(ModTweakBlock.birchGate);
+		TweakBlockInfo.fences.add(ModTweakBlock.jungleGate);
+		TweakBlockInfo.fences.add(ModTweakBlock.spruceGate);
+		TweakBlockInfo.fences.add(ModTweakBlock.ironGate);
 	}
 
 	public static void addNames() {

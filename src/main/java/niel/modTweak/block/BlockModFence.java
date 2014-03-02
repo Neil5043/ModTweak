@@ -6,6 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
@@ -18,9 +20,9 @@ import crazypants.enderio.EnderIO;
 public class BlockModFence extends BlockFence
 {
 	@SideOnly(Side.CLIENT)
-	public BlockModFence(int id)
+	public BlockModFence()
 	{
-		super(id, "", Material.wood);
+		super("", Material.wood);
 		setHardness(4.0F);
 		setCreativeTab(ModTweak.tabStoneLamp);
 	}
@@ -35,24 +37,23 @@ public class BlockModFence extends BlockFence
 	@Override
 	public boolean canConnectFenceTo(IBlockAccess blockAccess, int par2, int par3, int par4)
 	{
-		int l = blockAccess.getBlock(par2, par3, par4);
+		Block block = blockAccess.getBlock(par2, par3, par4);
 
-		if (l != this.blockID && l != Block.fenceGate.blockID && l != Block.fence.blockID)
+		if (block != this && block != Blocks.fence_gate && block != Blocks.fence)
 		{
-			for (Integer i : TweakBlockInfo.fenceIDs)
+			for (Block b : TweakBlockInfo.fences)
 			{
-				if (((Integer) l).compareTo(i) == 0)
+				if (b == block)
 					return true;
 			}
 
 			if (Loader.isModLoaded("EnderIO"))
 			{
-				if (l == EnderIO.blockCustomFence.blockID || l == EnderIO.blockCustomFenceGate.blockID)
+				if (block == EnderIO.blockCustomFence || block == EnderIO.blockCustomFenceGate)
 					return true;
 			}
 
-			Block block = Block.blocksList[l];
-			return block != null && block.blockMaterial.isOpaque() && block.renderAsNormalBlock() ? block.blockMaterial != Material.pumpkin : false;
+			return block != null && block.getMaterial().isOpaque() && block.renderAsNormalBlock() ? block.getMaterial() != Material.gourd : false;
 		}
 		else
 		{
@@ -75,22 +76,22 @@ public class BlockModFence extends BlockFence
 	IIcon[] IIcons = new IIcon[4];
 
 	@Override
-	public IIcon getIIcon(int par1, int par2)
+	public IIcon getIcon(int par1, int par2)
 	{
 		if (IIcons[0] == null)
 		{
 			for (int i = 1; i < 4; i++)
-				IIcons[i - 1] = Block.planks.getIIcon(i, i);
-			IIcons[3] = Block.blockIron.getIIcon(0, 0);
+				IIcons[i - 1] = Blocks.planks.getIcon(i, i);
+			IIcons[3] = Blocks.iron_block.getIcon(0, 0);
 		}
 		return IIcons[par2];
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List list)
+	public void getSubBlocks(Item item, CreativeTabs tab, List list)
 	{
 		for (int i = 0; i < 4; i++)
-			list.add(new ItemStack(this.blockID, 1, i));
+			list.add(new ItemStack(this, 1, i));
 	}
 }

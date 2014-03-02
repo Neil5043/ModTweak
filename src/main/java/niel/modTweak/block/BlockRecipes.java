@@ -1,7 +1,7 @@
 package niel.modTweak.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -13,7 +13,7 @@ public class BlockRecipes
 		ItemStack[] planks = new ItemStack[3];
 		for (int i = 1; i <= 3; i++)
 		{
-			planks[i - 1] = new ItemStack(Block.planks, 1, i);
+			planks[i - 1] = new ItemStack(Blocks.planks, 1, i);
 		}
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.fence, 3, 0), new Object[]{
@@ -21,7 +21,7 @@ public class BlockRecipes
 			"BSB",
 			
 			'B', planks[1],
-			'S', Item.stick
+			'S', Items.stick
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.fence, 3, 1), new Object[]{
@@ -29,7 +29,7 @@ public class BlockRecipes
 			"JSJ",
 			
 			'J', planks[2],
-			'S', Item.stick
+			'S', Items.stick
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.fence, 3, 2), new Object[]{
@@ -37,15 +37,15 @@ public class BlockRecipes
 			"sSs",
 			
 			's', planks[0],
-			'S', Item.stick
+			'S', Items.stick
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.fence, 3, 3), new Object[]{
 			"ISI",
 			"ISI",
 			
-			'I', Item.ingotIron,
-			'S', Item.stick
+			'I', Items.iron_ingot,
+			'S', Items.stick
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.birchGate), new Object[]{
@@ -53,7 +53,7 @@ public class BlockRecipes
 			"S S",
 			
 			'B', planks[1],
-			'S', Item.stick
+			'S', Items.stick
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.jungleGate), new Object[]{
@@ -61,7 +61,7 @@ public class BlockRecipes
 			"S S",
 			
 			'J', planks[2],
-			'S', Item.stick
+			'S', Items.stick
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.spruceGate), new Object[]{
@@ -69,15 +69,15 @@ public class BlockRecipes
 			"S S",
 			
 			's', planks[0],
-			'S', Item.stick
+			'S', Items.stick
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.ironGate), new Object[]{
 			"ISI",
 			"S S",
 			
-			'I', Item.ingotIron,
-			'S', Item.stick
+			'I', Items.iron_ingot,
+			'S', Items.stick
 		});
 		
 		GameRegistry.addRecipe(new ItemStack(ModTweakBlock.blockLight), new Object[]{
@@ -85,9 +85,9 @@ public class BlockRecipes
 			"PTP",
 			"CPC",
 			
-			'C', Block.cobblestone,
-			'P', Block.thinGlass,
-			'T', Block.torchWood
+			'C', Blocks.cobblestone,
+			'P', Blocks.glass_pane,
+			'T', Blocks.torch
 		});
 	}
 }

@@ -1,12 +1,14 @@
 package crazypants.enderio.machine.painter;
 
-public class BlockCustomFenceGate {
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class BlockCustomFenceGate extends Block{
 	
-	public int blockID = 0;
 	
-	public BlockCustomFenceGate(int id)
+	public BlockCustomFenceGate()
 	{
-		this.blockID = id;
+		super(Material.wood);
 	}
 
 }

@@ -3,7 +3,7 @@ package niel.modTweak.item;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IIIconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -21,9 +21,9 @@ public class ItemModDoor extends Item {
 	public IIcon[] IIcons;
 	public String[] textureNames = new String[]{"birchDoorItem", "jungleDoorItem", "spruceDoorItem"};
 
-	public ItemModDoor(int id)
+	public ItemModDoor()
 	{
-		super(id);
+		super();
 		maxStackSize = 16;
 		setCreativeTab(ModTweak.tabStoneLamp);
 		setHasSubtypes(true);
@@ -32,24 +32,24 @@ public class ItemModDoor extends Item {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List list) {
+	public void getSubItems(Item item, CreativeTabs par2CreativeTabs, List list) {
 		for (int i = 0; i < IIcons.length; i++)
-			list.add(new ItemStack(this.itemID, 1, i));
+			list.add(new ItemStack(this, 1, i));
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIIcons(IIIconRegister register)
+	public void registerIcons(IIconRegister register)
 	{
 		this.IIcons = new IIcon[textureNames.length];
 
 		for (int i = 0; i < textureNames.length; i++)
-			IIcons[i] = register.registerIIcon("modtweak:" + textureNames[i]);
+			IIcons[i] = register.registerIcon("modtweak:" + textureNames[i]);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public IIcon getIIconFromDamage(int meta) {
+	public IIcon getIconFromDamage(int meta) {
 		return IIcons[meta];
 	}
 
@@ -63,7 +63,7 @@ public class ItemModDoor extends Item {
 		}
 		y++;
 
-		Block block = Block.blocksList[ModTweakBlock.birchDoor.blockID + itemstack.getItemDamage()];
+		Block block = Block.getBlockById(Block.getIdFromBlock(ModTweakBlock.birchDoor) + itemstack.getItemDamage());
 
 		if (!player.canPlayerEdit(x, y, z, side, itemstack) || !player.canPlayerEdit(x, y + 1, z, side, itemstack))
 		{
@@ -107,10 +107,10 @@ public class ItemModDoor extends Item {
 			var6 = 1;
 		}
 
-		int var8 = (world.isBlockNormalCube(x - var6, y, z - var7) ? 1 : 0) + (world.isBlockNormalCube(x - var6, y + 1, z - var7) ? 1 : 0);
-		int var9 = (world.isBlockNormalCube(x + var6, y, z + var7) ? 1 : 0) + (world.isBlockNormalCube(x + var6, y + 1, z + var7) ? 1 : 0);
-		boolean var10 = world.getBlock(x - var6, y, z - var7) == block.blockID || world.getBlock(x - var6, y + 1, z - var7) == block.blockID;
-		boolean var11 = world.getBlock(x + var6, y, z + var7) == block.blockID || world.getBlock(x + var6, y + 1, z + var7) == block.blockID;
+		int var8 = (world.isBlockNormalCubeDefault(x - var6, y, z - var7, true) ? 1 : 0) + (world.isBlockNormalCubeDefault(x - var6, y + 1, z - var7, true) ? 1 : 0);
+		int var9 = (world.isBlockNormalCubeDefault(x + var6, y, z + var7, true) ? 1 : 0) + (world.isBlockNormalCubeDefault(x + var6, y + 1, z + var7, true) ? 1 : 0);
+		boolean var10 = world.getBlock(x - var6, y, z - var7) == block || world.getBlock(x - var6, y + 1, z - var7) == block;
+		boolean var11 = world.getBlock(x + var6, y, z + var7) == block || world.getBlock(x + var6, y + 1, z + var7) == block;
 		boolean var12 = false;
 
 		if (var10 && !var11)
@@ -122,10 +122,10 @@ public class ItemModDoor extends Item {
 			var12 = true;
 		}
 
-		world.setBlock(x, y, z, block.blockID, rotate, 2);
-		world.setBlock(x, y + 1, z, block.blockID, 8 | (var12 ? 1 : 0), 2);
-		world.notifyBlocksOfNeighborChange(x, y, z, block.blockID);
-		world.notifyBlocksOfNeighborChange(x, y + 1, z, block.blockID);
+		world.setBlock(x, y, z, block, rotate, 2);
+		world.setBlock(x, y + 1, z, block, 8 | (var12 ? 1 : 0), 2);
+		world.notifyBlocksOfNeighborChange(x, y, z, block);
+		world.notifyBlocksOfNeighborChange(x, y + 1, z, block);
 	}
 
 	@Override

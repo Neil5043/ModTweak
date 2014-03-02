@@ -5,13 +5,14 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.IIconFlipped;
-import net.minecraft.client.renderer.texture.IIIconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import niel.modTweak.ModTweak;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -25,47 +26,47 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockModDoor extends BlockDoor
 {
     @SideOnly(Side.CLIENT)
-    private IIcon[] IIcons;
+    private IIcon[] icons;
     
     private String name;
     private int damage;
 
-    public BlockModDoor(int par1, int damage, String doorName)
+    public BlockModDoor(int damage, String doorName)
     {
-        super(par1, Material.wood);
+        super(Material.wood);
         float f = 0.5F;
         float f1 = 1.0F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f1, 0.5F + f);
         this.setHardness(3F);
-        this.setStepSound(Block.soundWoodFootstep);
+        this.setStepSound(Block.soundTypeWood);
         this.name = doorName;
         this.damage = damage;
     }
 
-    @Override
 	@SideOnly(Side.CLIENT)
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public IIcon getIIcon(int par1, int par2)
+    @Override
+    public IIcon getIcon(int side, int meta)
     {
-        return this.IIcons[0];
+        return this.icons[0];
     }
     
     @Override
-    public IIcon getBlockTexture(IBlockAccess blockAccess, int par2, int par3, int par4, int par5)
+    public IIcon getIcon(IBlockAccess world, int x, int y, int z, int meta)
     {
-    	if (par5 != 1 && par5 != 0)
+    	if (meta != 1 && meta != 0)
         {
-            int i1 = this.getFullMetadata(blockAccess, par2, par3, par4);
+            int i1 = this.func_150012_g(world, x, y, z);
             int j1 = i1 & 3;
             boolean flag2 = (i1 & 8) != 0;
 
-            return this.IIcons[(flag2 ? 1 : 0)];
+            return this.icons[(flag2 ? 1 : 0)];
         }
         else
         {
-            return this.IIcons[0];
+            return this.icons[0];
         }
     }
 
@@ -75,12 +76,12 @@ public class BlockModDoor extends BlockDoor
      * When this method is called, your block should register all the IIcons it needs with the given IIIconRegister. This
      * is the only chance you get to register IIcons.
      */
-    public void registerIIcons(IIIconRegister register)
+    public void registerBlockIcons(IIconRegister register)
     {
-        this.IIcons = new IIcon[2];
+        this.icons = new IIcon[2];
       
-        IIcons[0] = register.registerIIcon("modtweak:" + name + "_upper");
-        IIcons[1] = register.registerIIcon("modtweak:" + name + "_lower");
+        icons[0] = register.registerIcon("modtweak:" + name + "_upper");
+        icons[1] = register.registerIcon("modtweak:" + name + "_lower");
         
         /*this.rearIIcons[0] = register.registerIIcon("modtweak:doorBirch_upper");
         this.frontIIcons[0] = register.registerIIcon("modtweak:doorBirch_lower");
@@ -111,9 +112,9 @@ public class BlockModDoor extends BlockDoor
      * Returns the ID of the items to drop on destruction.
      */
     @Override
-	public int idDropped(int meta, Random par2Random, int par3)
+    public Item getItemDropped(int meta, Random p_149650_2_, int p_149650_3_)
     {
-    	return (meta & 8) != 0 ? 0 : ModTweakBlock.doorItem.itemID;
+    	return (meta & 8) != 0 ? null : ModTweakBlock.doorItem;
     }
     
     @Override
@@ -126,8 +127,8 @@ public class BlockModDoor extends BlockDoor
      * only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)
      */
     @Override
-	public int idPicked(World par1World, int par2, int par3, int par4)
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z)
     {
-        return this.blockID;
+        return new ItemStack(this);
     }
 }

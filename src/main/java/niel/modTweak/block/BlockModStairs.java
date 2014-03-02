@@ -6,9 +6,9 @@ import niel.modTweak.ModTweak;
 
 public class BlockModStairs extends BlockStairs
 {
-	public BlockModStairs(int id, Block block, int metadata)
+	public BlockModStairs(Block block, int metadata)
 	{
-		super(id, block, metadata);
+		super(block, metadata);
 		setCreativeTab(ModTweak.tabStoneLamp);
 	}
 }

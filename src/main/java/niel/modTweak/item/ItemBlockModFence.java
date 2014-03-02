@@ -2,7 +2,9 @@ package niel.modTweak.item;
 
 import java.util.List;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -13,9 +15,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemBlockModFence extends ItemBlock
 {
 	public static final String[] woodType = new String[] {"spruce", "birch", "jungle", "iron"};
-	public ItemBlockModFence(int par1)
+	public ItemBlockModFence(Block block)
 	{
-		super(par1);
+		super(block);
 		//setCreativeTab(ModTweak.tabStoneLamp);
 		setMaxDamage(0);
 		setHasSubtypes(true);
@@ -23,9 +25,9 @@ public class ItemBlockModFence extends ItemBlock
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public IIcon getIIconFromDamage(int par1)
+	public IIcon getIconFromDamage(int par1)
 	{	
-		return ModTweakBlock.fence.getIIcon(2, ModTweakBlock.fence.damageDropped(par1));
+		return ModTweakBlock.fence.getIcon(2, ModTweakBlock.fence.damageDropped(par1));
 	}
 
 	@Override
@@ -35,10 +37,10 @@ public class ItemBlockModFence extends ItemBlock
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List list)
+	public void getSubItems(Item item, CreativeTabs tab, List list)
 	{
 		for (int i = 0; i < woodType.length; i++)
-			list.add(new ItemStack(this.itemID, 1, i));
+			list.add(new ItemStack(this, 1, i));
 	}
 
 	@Override

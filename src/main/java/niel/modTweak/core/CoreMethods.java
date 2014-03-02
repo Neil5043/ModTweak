@@ -10,6 +10,9 @@ public class CoreMethods {
 	
 	public static boolean canConnectFenceTo(net.minecraft.world.IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
     {
+		return false;
+		// TODO 1.7
+		/*
         int l = par1IBlockAccess.getBlock(par2, par3, par4);
         
 
@@ -17,7 +20,7 @@ public class CoreMethods {
         {
             Block block = Block.blocksList[l];
             
-            for (Integer i : TweakBlockInfo.fenceIDs)
+            for (Integer i : TweakBlockInfo.fences)
             {
             	if (i.equals(l))
             		return true;
@@ -35,17 +38,20 @@ public class CoreMethods {
         {
             return true;
         }
+        */
     }
 	
     public static boolean canConnectWallTo(net.minecraft.world.IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
     {
+		return false;
+    	/*
         int l = par1IBlockAccess.getBlock(par2, par3, par4);
 
         if (l != Block.cobblestoneWall.blockID && l != Block.fenceGate.blockID)
         {
             Block block = Block.blocksList[l];
             
-            for (Integer i : TweakBlockInfo.fenceIDs)
+            for (Integer i : TweakBlockInfo.fences)
             {
             	if (i.equals(l))
             		return true;
@@ -63,6 +69,7 @@ public class CoreMethods {
         {
             return true;
         }
+        */
     }
 
 }
