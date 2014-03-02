@@ -10,7 +10,7 @@ public class CoreMethods {
 	
 	public static boolean canConnectFenceTo(net.minecraft.world.IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
     {
-        int l = par1IBlockAccess.getBlockId(par2, par3, par4);
+        int l = par1IBlockAccess.getBlock(par2, par3, par4);
         
 
         if (l != Block.fence.blockID && l != Block.fenceGate.blockID)
@@ -39,7 +39,7 @@ public class CoreMethods {
 	
     public static boolean canConnectWallTo(net.minecraft.world.IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
     {
-        int l = par1IBlockAccess.getBlockId(par2, par3, par4);
+        int l = par1IBlockAccess.getBlock(par2, par3, par4);
 
         if (l != Block.cobblestoneWall.blockID && l != Block.fenceGate.blockID)
         {

@@ -3,8 +3,8 @@ package niel.modTweak.block;
 import java.util.Random;
 
 import net.minecraft.block.BlockRedstoneLight;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.Icon;
+import net.minecraft.client.renderer.texture.IIIconRegister;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import niel.modTweak.ModTweak;
 import cpw.mods.fml.relauncher.Side;
@@ -22,20 +22,20 @@ public class BlockModLight extends BlockRedstoneLight
 	}
 
 	@SideOnly(Side.CLIENT)
-	private Icon iconActive, iconInactive;
+	private IIcon IIconActive, IIconInactive;
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister register)
+	public void registerIIcons(IIIconRegister register)
 	{
-		iconActive = register.registerIcon("modtweak:" + "light_on");
-		iconInactive = register.registerIcon("modtweak:" + "light_off");
+		IIconActive = register.registerIIcon("modtweak:" + "light_on");
+		IIconInactive = register.registerIIcon("modtweak:" + "light_off");
 	}
 
 	@Override
-	public Icon getIcon(int par1, int par2)
+	public IIcon getIIcon(int par1, int par2)
 	{
-		return par2 == 0 ? iconInactive : iconActive;
+		return par2 == 0 ? IIconInactive : IIconActive;
 	}
 
 	public boolean isActive(World world, int x, int y, int z)

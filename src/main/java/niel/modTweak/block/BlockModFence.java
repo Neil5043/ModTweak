@@ -7,7 +7,7 @@ import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import niel.modTweak.ModTweak;
 import cpw.mods.fml.common.Loader;
@@ -35,7 +35,7 @@ public class BlockModFence extends BlockFence
 	@Override
 	public boolean canConnectFenceTo(IBlockAccess blockAccess, int par2, int par3, int par4)
 	{
-		int l = blockAccess.getBlockId(par2, par3, par4);
+		int l = blockAccess.getBlock(par2, par3, par4);
 
 		if (l != this.blockID && l != Block.fenceGate.blockID && l != Block.fence.blockID)
 		{
@@ -72,18 +72,18 @@ public class BlockModFence extends BlockFence
 		return ModTweak.fenceRenderID;
 	}
 
-	Icon[] icons = new Icon[4];
+	IIcon[] IIcons = new IIcon[4];
 
 	@Override
-	public Icon getIcon(int par1, int par2)
+	public IIcon getIIcon(int par1, int par2)
 	{
-		if (icons[0] == null)
+		if (IIcons[0] == null)
 		{
 			for (int i = 1; i < 4; i++)
-				icons[i - 1] = Block.planks.getIcon(i, i);
-			icons[3] = Block.blockIron.getIcon(0, 0);
+				IIcons[i - 1] = Block.planks.getIIcon(i, i);
+			IIcons[3] = Block.blockIron.getIIcon(0, 0);
 		}
-		return icons[par2];
+		return IIcons[par2];
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

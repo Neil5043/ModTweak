@@ -5,10 +5,10 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.IconFlipped;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.IIconFlipped;
+import net.minecraft.client.renderer.texture.IIIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import niel.modTweak.ModTweak;
@@ -25,7 +25,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockModDoor extends BlockDoor
 {
     @SideOnly(Side.CLIENT)
-    private Icon[] icons;
+    private IIcon[] IIcons;
     
     private String name;
     private int damage;
@@ -47,13 +47,13 @@ public class BlockModDoor extends BlockDoor
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public Icon getIcon(int par1, int par2)
+    public IIcon getIIcon(int par1, int par2)
     {
-        return this.icons[0];
+        return this.IIcons[0];
     }
     
     @Override
-    public Icon getBlockTexture(IBlockAccess blockAccess, int par2, int par3, int par4, int par5)
+    public IIcon getBlockTexture(IBlockAccess blockAccess, int par2, int par3, int par4, int par5)
     {
     	if (par5 != 1 && par5 != 0)
         {
@@ -61,41 +61,41 @@ public class BlockModDoor extends BlockDoor
             int j1 = i1 & 3;
             boolean flag2 = (i1 & 8) != 0;
 
-            return this.icons[(flag2 ? 1 : 0)];
+            return this.IIcons[(flag2 ? 1 : 0)];
         }
         else
         {
-            return this.icons[0];
+            return this.IIcons[0];
         }
     }
 
     @Override
 	@SideOnly(Side.CLIENT)
     /**
-     * When this method is called, your block should register all the icons it needs with the given IconRegister. This
-     * is the only chance you get to register icons.
+     * When this method is called, your block should register all the IIcons it needs with the given IIIconRegister. This
+     * is the only chance you get to register IIcons.
      */
-    public void registerIcons(IconRegister register)
+    public void registerIIcons(IIIconRegister register)
     {
-        this.icons = new Icon[2];
+        this.IIcons = new IIcon[2];
       
-        icons[0] = register.registerIcon("modtweak:" + name + "_upper");
-        icons[1] = register.registerIcon("modtweak:" + name + "_lower");
+        IIcons[0] = register.registerIIcon("modtweak:" + name + "_upper");
+        IIcons[1] = register.registerIIcon("modtweak:" + name + "_lower");
         
-        /*this.rearIcons[0] = register.registerIcon("modtweak:doorBirch_upper");
-        this.frontIcons[0] = register.registerIcon("modtweak:doorBirch_lower");
-        this.rearIcons[1] = new IconFlipped(this.rearIcons[0], true, false);
-        this.frontIcons[1] = new IconFlipped(this.frontIcons[0], true, false);
+        /*this.rearIIcons[0] = register.registerIIcon("modtweak:doorBirch_upper");
+        this.frontIIcons[0] = register.registerIIcon("modtweak:doorBirch_lower");
+        this.rearIIcons[1] = new IIconFlipped(this.rearIIcons[0], true, false);
+        this.frontIIcons[1] = new IIconFlipped(this.frontIIcons[0], true, false);
         
-        this.rearIcons[2] = register.registerIcon("modtweak:doorJungle_upper");
-        this.frontIcons[2] = register.registerIcon("modtweak:doorJungle_lower");
-        this.rearIcons[3] = new IconFlipped(this.rearIcons[2], true, false);
-        this.frontIcons[3] = new IconFlipped(this.frontIcons[2], true, false);
+        this.rearIIcons[2] = register.registerIIcon("modtweak:doorJungle_upper");
+        this.frontIIcons[2] = register.registerIIcon("modtweak:doorJungle_lower");
+        this.rearIIcons[3] = new IIconFlipped(this.rearIIcons[2], true, false);
+        this.frontIIcons[3] = new IIconFlipped(this.frontIIcons[2], true, false);
         
-        this.rearIcons[4] = register.registerIcon("modtweak:doorJungle_upper");
-        this.frontIcons[4] = register.registerIcon("modtweak:doorJungle_lower");
-        this.rearIcons[5] = new IconFlipped(this.rearIcons[4], true, false);
-        this.frontIcons[5] = new IconFlipped(this.frontIcons[4], true, false);
+        this.rearIIcons[4] = register.registerIIcon("modtweak:doorJungle_upper");
+        this.frontIIcons[4] = register.registerIIcon("modtweak:doorJungle_lower");
+        this.rearIIcons[5] = new IIconFlipped(this.rearIIcons[4], true, false);
+        this.frontIIcons[5] = new IIconFlipped(this.frontIIcons[4], true, false);
     */
     }
 

@@ -11,7 +11,7 @@ public class CreativeTabModTweak extends CreativeTabs {
 	}
 	
 	@Override
-	public int getTabIconItemIndex() {
+	public int getTabIIconItemIndex() {
 		return ModTweakBlock.fence.blockID;
 	}
 	

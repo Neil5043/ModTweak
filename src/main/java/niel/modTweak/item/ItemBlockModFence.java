@@ -5,7 +5,7 @@ import java.util.List;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import niel.modTweak.block.ModTweakBlock;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -23,9 +23,9 @@ public class ItemBlockModFence extends ItemBlock
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getIconFromDamage(int par1)
+	public IIcon getIIconFromDamage(int par1)
 	{	
-		return ModTweakBlock.fence.getIcon(2, ModTweakBlock.fence.damageDropped(par1));
+		return ModTweakBlock.fence.getIIcon(2, ModTweakBlock.fence.damageDropped(par1));
 	}
 
 	@Override

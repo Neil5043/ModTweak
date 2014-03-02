@@ -3,12 +3,12 @@ package niel.modTweak.item;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import niel.modTweak.ModTweak;
@@ -18,7 +18,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemModDoor extends Item {
 
-	public Icon[] icons;
+	public IIcon[] IIcons;
 	public String[] textureNames = new String[]{"birchDoorItem", "jungleDoorItem", "spruceDoorItem"};
 
 	public ItemModDoor(int id)
@@ -33,24 +33,24 @@ public class ItemModDoor extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List list) {
-		for (int i = 0; i < icons.length; i++)
+		for (int i = 0; i < IIcons.length; i++)
 			list.add(new ItemStack(this.itemID, 1, i));
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister register)
+	public void registerIIcons(IIIconRegister register)
 	{
-		this.icons = new Icon[textureNames.length];
+		this.IIcons = new IIcon[textureNames.length];
 
 		for (int i = 0; i < textureNames.length; i++)
-			icons[i] = register.registerIcon("modtweak:" + textureNames[i]);
+			IIcons[i] = register.registerIIcon("modtweak:" + textureNames[i]);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getIconFromDamage(int meta) {
-		return icons[meta];
+	public IIcon getIIconFromDamage(int meta) {
+		return IIcons[meta];
 	}
 
 
@@ -109,8 +109,8 @@ public class ItemModDoor extends Item {
 
 		int var8 = (world.isBlockNormalCube(x - var6, y, z - var7) ? 1 : 0) + (world.isBlockNormalCube(x - var6, y + 1, z - var7) ? 1 : 0);
 		int var9 = (world.isBlockNormalCube(x + var6, y, z + var7) ? 1 : 0) + (world.isBlockNormalCube(x + var6, y + 1, z + var7) ? 1 : 0);
-		boolean var10 = world.getBlockId(x - var6, y, z - var7) == block.blockID || world.getBlockId(x - var6, y + 1, z - var7) == block.blockID;
-		boolean var11 = world.getBlockId(x + var6, y, z + var7) == block.blockID || world.getBlockId(x + var6, y + 1, z + var7) == block.blockID;
+		boolean var10 = world.getBlock(x - var6, y, z - var7) == block.blockID || world.getBlock(x - var6, y + 1, z - var7) == block.blockID;
+		boolean var11 = world.getBlock(x + var6, y, z + var7) == block.blockID || world.getBlock(x + var6, y + 1, z + var7) == block.blockID;
 		boolean var12 = false;
 
 		if (var10 && !var11)
