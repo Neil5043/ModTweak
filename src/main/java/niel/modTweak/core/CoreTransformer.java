@@ -25,21 +25,21 @@ public class CoreTransformer implements IClassTransformer
 {
 
 	private final String FENCE_CLASS_NAME = "net.minecraft.block.BlockFence";
-	private final String OBF_FENCE_CLASS_NAME = "aoh";
+	private final String OBF_FENCE_CLASS_NAME = "ajl";
 	private final String FENCE_METHOD_NAME = "canConnectFenceTo";
-	private final String FENCE_METHOD_NAME_OBF = "func_72250_d";
-	private final String FENCE_METHOD_NOTCH = "a";
+	private final String FENCE_METHOD_NAME_OBF = "func_149826_e";
+	private final String FENCE_METHOD_NOTCH = "e";
 	private final String FENCE_METHOD_DESC = "(Lnet/minecraft/world/IBlockAccess;III)Z";
-	private final String OBF_NEW_FENCE_METHOD_DESC = "(Lbeu;F)V";
+	private final String OBF_NEW_FENCE_METHOD_DESC = "(Lafx;III)Z";
 	private final String NEW_FENCE_METHOD_DESC = "(Lnet/minecraft/world/IBlockAccess;III)Z";
 
 	private final String WALL_CLASS_NAME = "net.minecraft.block.BlockWall";
-	private final String OBF_WALL_CLASS_NAME = "arn";
+	private final String OBF_WALL_CLASS_NAME = "amu";
 	private final String WALL_METHOD_NAME = "canConnectWallTo";
-	private final String WALL_METHOD_NAME_OBF = "func_82538_d";
-	private final String WALL_METHOD_NOTCH = "a";
+	private final String WALL_METHOD_NAME_OBF = "func_150091_e";
+	private final String WALL_METHOD_NOTCH = "e";
 	private final String WALL_METHOD_DESC = "(Lnet/minecraft/world/IBlockAccess;III)Z";
-	private final String OBF_NEW_WALL_METHOD_DESC = "(Lbeu;F)V";
+	private final String OBF_NEW_WALL_METHOD_DESC = "(Lafx;III)Z";
 	private final String NEW_WALL_METHOD_DESC = "(Lnet/minecraft/world/IBlockAccess;III)Z";
 
 	@Override
@@ -71,13 +71,13 @@ public class CoreTransformer implements IClassTransformer
 				{
 					if (m.instructions.get(index).getType() == AbstractInsnNode.METHOD_INSN)
 					{
-
 						LabelNode lmm1Node = new LabelNode(new Label());
 
 						LabelNode jumpLabel = new LabelNode(new Label());
 
 						// make new instruction list
 						InsnList toInject = new InsnList();
+
 
 						toInject.add(new VarInsnNode(Opcodes.ALOAD, 1));
 						toInject.add(new VarInsnNode(Opcodes.ILOAD, 2));
