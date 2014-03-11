@@ -59,7 +59,6 @@ public class BlockModDoor extends BlockDoor
     	if (meta != 1 && meta != 0)
         {
             int i1 = this.func_150012_g(world, x, y, z);
-            int j1 = i1 & 3;
             boolean flag2 = (i1 & 8) != 0;
 
             return this.icons[(flag2 ? 1 : 0)];
